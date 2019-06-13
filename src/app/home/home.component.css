@@ -1,0 +1,14 @@
+GridLayout {
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-image: url("https://i.pinimg.com/736x/bf/69/a5/bf69a55f145adb7ac26517d7e85355f4.jpg");
+}
+
+button {
+    background-color: orchid;
+    border-radius: 5;
+    color: white;
+    vertical-align: middle;
+    width: 60%;
+}
