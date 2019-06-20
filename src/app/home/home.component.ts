@@ -1,23 +1,27 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, TemplateRef } from "@angular/core";
+import { config } from "../shared/configuration.model";
+import { BluetoothService } from "../shared/bluetooth.service";
 
 @Component({
     selector: "Home",
     moduleId: module.id,
+    providers: [BluetoothService],
     templateUrl: "./home.component.html",
     styleUrls: ["./home.component.css"]
 })
 export class HomeComponent implements OnInit {
+    config: config;
 
-    constructor() {
-        // Use the component constructor to inject providers.
+    constructor(private bluetoothService: BluetoothService) {
+        this.config = new config();
     }
 
     ngOnInit(): void {
-        
+        //this.perphs = this.peripheralService.getPeripherals();
         // Init your component properties here.
     }
 
-    scan() {
+    scan(perphs) {
         var bluetooth = require("nativescript-bluetooth");
         bluetooth.isBluetoothEnabled().then(
             function(enabled){
@@ -25,11 +29,13 @@ export class HomeComponent implements OnInit {
                 bluetooth.startScanning({
                     serviceUUIDs: [],
                     seconds: 4,
-                    onDiscovered: function(peripheral){
-                        console.log("Peripheral found with UUID: " + peripheral.UUID);
-                        console.log("Peripheral's name: " + peripheral.name);
+                    onDiscovered: function(periph){
+                        console.log("Periphera found with UUID: " + periph.UUID);
+                        console.log("Periphera's name: " + periph.name);
+                        
                     }
                 }).then(function() {
+                    
                     console.log("scanning complete");
                 }, function(err) {
                     console.log("error while scanning: " + err);

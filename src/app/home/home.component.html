@@ -2,7 +2,15 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<GridLayout class="page">
-    <!-- Add your page content here -->
-    <button text="Scan for devices" (tap)="scan()" class="btn btn-primary btn-active"></button>
-</GridLayout>
+<StackLayout>
+    <GridLayout columns="*, *" rows="55, 55">
+        <Button row="0" col="0" colSpan="1" rowSpan="1" text="bluetooth enabled?" tap="{{ doIsBluetoothEnabled }}" class="btn btn-primary btn-active btn-rounded-sm"></Button>
+        <!-- Add your page content here -->
+        
+        <button row="1" colSpan="2" rowSpan="1" text="Scan for devices" (tap)="scan()" class="btn btn-primary btn-active"></button>
+    </GridLayout>
+   
+
+
+    <Label text="testsdfo"></Label>
+</StackLayout>
