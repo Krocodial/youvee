@@ -1,6 +1,9 @@
 import { Component, OnInit, TemplateRef } from "@angular/core";
 import { config } from "../shared/configuration.model";
 import { BluetoothService } from "../shared/bluetooth.service";
+import { Bluetooth } from "../shared/bluetooth.model";
+import { Page } from "tns-core-modules/ui/page";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "Home",
@@ -11,37 +14,45 @@ import { BluetoothService } from "../shared/bluetooth.service";
 })
 export class HomeComponent implements OnInit {
     config: config;
+    deviceList;
+    groceryList: Array<Object> = [];
+    opa: Array<Object> = [];
 
-    constructor(private bluetoothService: BluetoothService) {
+    constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page) {
         this.config = new config();
+        this.deviceList = [];
     }
 
-    ngOnInit(): void {
+    ngOnInit() {
+        //this.deviceList = this.bluetoothService.scan();
+        //this.devices = this.bluetoothService.scan();
+        
+        this.page.actionBarHidden = true;
+        
+
         //this.perphs = this.peripheralService.getPeripherals();
         // Init your component properties here.
     }
 
-    scan(perphs) {
-        var bluetooth = require("nativescript-bluetooth");
-        bluetooth.isBluetoothEnabled().then(
-            function(enabled){
-                console.log("Enabled? " + enabled);
-                bluetooth.startScanning({
-                    serviceUUIDs: [],
-                    seconds: 4,
-                    onDiscovered: function(periph){
-                        console.log("Periphera found with UUID: " + periph.UUID);
-                        console.log("Periphera's name: " + periph.name);
-                        
-                    }
-                }).then(function() {
-                    
-                    console.log("scanning complete");
-                }, function(err) {
-                    console.log("error while scanning: " + err);
-                });
-            },
-        );
+    check() {
+        console.log(this.deviceList.length);
+        this.deviceList.forEach((item) => {
+            console.log(item);
+        });
+    }
+
+    async scan() {
+        this.deviceList = await this.bluetoothService.scan().then(function(devices) {
+            console.log('test');
+            //console.log(devices);
+            return devices;
+        });
+        console.log(this.deviceList);
+
+        //console.log('-------------------------------------------------\n' + devs.length);
+        
+        //var test = this.bluetoothService.scan(); 
+        //console.log(test);
     }
 
 }

@@ -3,14 +3,23 @@
 </ActionBar>
 
 <StackLayout>
-    <GridLayout columns="*, *" rows="55, 55">
+    <GridLayout columns="*, *" rows="55, 55, 55">
         <Button row="0" col="0" colSpan="1" rowSpan="1" text="bluetooth enabled?" tap="{{ doIsBluetoothEnabled }}" class="btn btn-primary btn-active btn-rounded-sm"></Button>
         <!-- Add your page content here -->
         
         <button row="1" colSpan="2" rowSpan="1" text="Scan for devices" (tap)="scan()" class="btn btn-primary btn-active"></button>
+        <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>
+        
     </GridLayout>
-   
-
+    <GridLayout>
+        <RadListView [items]="deviceList">
+          <ng-template let-item="item">
+            <Label [text]="item.name" class="p-15"></Label>
+          </ng-template>
+        </RadListView>
+        
+    </GridLayout>
+    
 
     <Label text="testsdfo"></Label>
 </StackLayout>

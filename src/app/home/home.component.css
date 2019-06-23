@@ -2,7 +2,7 @@ GridLayout {
     justify-content: center;
     align-items: center;
     background-size: cover;
-    background-color: #ccffcc;
+    background-color: #f2fff2;
     margin: 25px 5% 25px 5%;
     /*background-image: url("https://i.pinimg.com/736x/bf/69/a5/bf69a55f145adb7ac26517d7e85355f4.jpg");*/
 }
