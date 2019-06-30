@@ -1,9 +1,13 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
-
+import { from } from 'rxjs';
 import { Bluetooth } from "./bluetooth.model";
 import { config } from "./configuration.model";
+
+import * as observableArray from "tns-core-modules/data/observable-array";
+import * as bluetooth from "nativescript-bluetooth";
+
 
 @Injectable()
 export class BluetoothService{
@@ -16,6 +20,32 @@ export class BluetoothService{
 
     register(config: config) {
         alert("Bluetooth run");
+    }
+
+    scan() {
+
+        var opa = new observableArray.ObservableArray();
+
+        return from(bluetooth.startScanning({
+            serviceUUIDs: [],
+            seconds: 2,
+            onDiscovered: (peripheral) => {
+                if (peripheral.name) {
+                    opa.push({'uuid': peripheral.UUID, 'name': peripheral.name});
+                }
+                
+            },
+            skipPermissionCheck: false,
+          }).then(() => {  
+            console.log("finished scanning");
+            return opa;
+            
+          }, (err) => {
+            console.log("error while scanning: " + err);
+            return opa;
+          })
+        );
+        
     }
 
 /*
@@ -39,6 +69,43 @@ export class BluetoothService{
     }
 */
 
+    async connect(uuid) {
+        var bluetooth = require("nativescript-bluetooth");
+        var observable = require("tns-core-modules/data/observable");
+        var observableArray = require("tns-core-modules/data/observable-array");
+        
+        var opa = new observableArray.ObservableArray();
+
+        var services = await bluetooth.connect({
+            UUID: uuid,
+            onConnected: function(peripheral) {
+                console.log("Peripheral connected with UUID: " + peripheral.UUID);
+                var serviceList = [];
+                return peripheral.services;
+                console.log(peripheral.services);
+                peripheral.services.forEach(function(service) {
+                    opa.push(observable.fromObject(service));
+                    //serviceList.push({service: JSON.stringify(service)});
+                    //console.log("service found: " + JSON.stringify(service));   
+                    //console.log(service);
+                    return opa;
+                });
+                opa.push(observable.fromObject(peripheral));
+                //console.log(opa);
+                return opa;
+                //console.log(opa);
+            },
+            onDisconnected: function(peripheral) {
+                console.log("Peripheral disconnected with UUID: " + peripheral.UUID);
+                return peripheral.services;
+            }
+        });
+        //console.log(await serviceList);
+        return services;
+        
+    }
+
+    /*
     async scan() {
         
         var bluetooth = require("nativescript-bluetooth");
@@ -57,14 +124,20 @@ export class BluetoothService{
                     serviceUUIDs: [],
                     seconds: 4,
                     onDiscovered: function(periph){
-                        opa.push(observable.fromObject(periph));
+                        //if (periph.hasOwnProperty('name')) {
+                        //    console.log('slkdjfsdjf    sl;kdjfsoidjfl');
+                        //}
+                        if (periph.name) {
+                            console.log(periph.name)
+                            opa.push(observable.fromObject(periph));
+                        }
                         //console.log(observable.fromObject(periph));
                         //deviceList.push({UUID: String(periph.name)});
                     }
                 }).then(function() {
                     var tmp = [];
                     opa.forEach((item) => {
-                        tmp.push({name: item._map.UUID});
+                        tmp.push({name: item._map.UUID, id: item._map.name});
                         //console.log(item);
                     })
                     console.log("scanning complete");
@@ -82,6 +155,7 @@ export class BluetoothService{
         //console.log(devices);
         return devices;
     }
+    */
 
   
     

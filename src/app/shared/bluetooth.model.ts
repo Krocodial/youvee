@@ -1,5 +1,7 @@
 export class Bluetooth {
-    constructor(public id: string, public name: string) {
+    uuid: string;
+    name: string;
+    /*constructor(public id: string, public name: string) {
 
-    }
+    }*/
 }

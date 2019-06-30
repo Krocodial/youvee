@@ -4,6 +4,11 @@ import { BluetoothService } from "../shared/bluetooth.service";
 import { Bluetooth } from "../shared/bluetooth.model";
 import { Page } from "tns-core-modules/ui/page";
 import { Router } from "@angular/router";
+import { PeripheralService } from "./peripheral.service";
+//import bluetooth = require('nativescript-bluetooth');
+import * as bluetooth from "nativescript-bluetooth";
+import { Observable } from "rxjs";
+
 
 @Component({
     selector: "Home",
@@ -14,13 +19,21 @@ import { Router } from "@angular/router";
 })
 export class HomeComponent implements OnInit {
     config: config;
-    deviceList;
+    //deviceList;
+    serviceList;
     groceryList: Array<Object> = [];
     opa: Array<Object> = [];
+    deviceList: Array<Bluetooth>;
+    device: Bluetooth;
+
+
+    bluetoothEnabled = false;
 
     constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page) {
         this.config = new config();
-        this.deviceList = [];
+        //this.deviceList = [];
+        this.serviceList = [];
+        this.device = new Bluetooth();
     }
 
     ngOnInit() {
@@ -29,30 +42,68 @@ export class HomeComponent implements OnInit {
         
         this.page.actionBarHidden = true;
         
-
+        bluetooth.isBluetoothEnabled().then(
+            function(enabled) {
+              console.log("Enabled? " + enabled);
+            }
+          );
         //this.perphs = this.peripheralService.getPeripherals();
         // Init your component properties here.
     }
 
     check() {
-        console.log(this.deviceList.length);
+        //console.log(this.deviceList.length);
         this.deviceList.forEach((item) => {
             console.log(item);
         });
+        console.log(this.serviceList.length);
     }
 
-    async scan() {
-        this.deviceList = await this.bluetoothService.scan().then(function(devices) {
-            console.log('test');
-            //console.log(devices);
-            return devices;
-        });
-        console.log(this.deviceList);
+    async connect(uuid) {
+        //var bluetooth = require("nativescript-bluetooth");
+      
+        bluetooth.isBluetoothEnabled().then(
+            enabled => console.log("Enabled? " + enabled)
+          );
 
-        //console.log('-------------------------------------------------\n' + devs.length);
-        
-        //var test = this.bluetoothService.scan(); 
-        //console.log(test);
+        /*
+        var services = bluetooth.connect({
+            UUID: uuid,
+            onConnected: function(peripheral) {
+                console.log("Peripheral connected with UUID: " + peripheral.UUID);
+                peripheral.services.forEach(function(service, services) {
+                    this.serviceList.push(service);
+                })
+                return peripheral.services;
+            }
+        });
+        */
+
+        //console.log(services);
+
+
+
+        /*this.serviceList = await this.bluetoothService.connect(uuid).then(function(services) {
+            console.log("main " + services);
+            return services;
+        });
+        console.log(this.serviceList);*/
+    }
+
+    scan() {
+
+        this.bluetoothService.scan()
+            .subscribe(
+                (opa) => {
+                    console.log(opa["_array"]);
+                    this.deviceList = opa["_array"];
+                    //alert("complete");
+                    
+                },
+                () => {
+                    alert("error");
+                }
+            );
     }
 
 }

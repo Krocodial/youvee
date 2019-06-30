@@ -11,15 +11,21 @@
         <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>
         
     </GridLayout>
-    <GridLayout>
+    <GridLayout rows="200">
         <RadListView [items]="deviceList">
           <ng-template let-item="item">
-            <Label [text]="item.name" class="p-15"></Label>
+            <button [text]="item.name" (tap)="connect(item.name)" class="p-15"></button>
           </ng-template>
         </RadListView>
         
     </GridLayout>
-    
+    <GridLayout>
+        <RadListView [items]="serviceList">
+            <ng-template let-item="item">
+                <Label [text]="item" class="p-15"></Label>
+            </ng-template>
+        </RadListView>
+    </GridLayout>
 
-    <Label text="testsdfo"></Label>
+    
 </StackLayout>
