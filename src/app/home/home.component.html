@@ -3,29 +3,93 @@
 </ActionBar>
 
 <StackLayout>
+    <GridLayout columns="*, *, *, *, *, *" rows="auto, auto, auto">
+        <Label row="0" col="0" colSpan="3" rowSpan="1" *ngIf="this.bluetoothService.connected" text="Connected"></Label>
+        <Label row="0" col="3" colSpan="3" rowSpan="1" *ngIf="this.bluetoothService.connected" [text]="this.bluetoothService.name"></Label>
+
+        <Label row="0" col="1" colSpan="2" rowSpan="1" *ngIf="!this.bluetoothService.connected" text="Disconnected"></Label>
+        <Button row="0" col="3" colSpan="2" rowSpan="1" *ngIf="!this.bluetoothService.connected" text="Connect to device" class="btn btn-rounded-sm btn-primary" (tap)="this.busy=true;scan()"></Button>
+        <!--<ActivityIndicator row="1" [busy]="this.busy" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>-->
+    </GridLayout>
+    
+    <!--
     <GridLayout columns="*, *" rows="55, 55, 55">
         <Button row="0" col="0" colSpan="1" rowSpan="1" text="bluetooth enabled?" tap="{{ doIsBluetoothEnabled }}" class="btn btn-primary btn-active btn-rounded-sm"></Button>
-        <!-- Add your page content here -->
+        <Label row="0" col="1" colSpan="1" rowSpan="1" [(text)]="this.bluetoothService.connected" class="p-15"></Label>
+    
         
         <button row="1" colSpan="2" rowSpan="1" text="Scan for devices" (tap)="scan()" class="btn btn-primary btn-active"></button>
         <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>
         
     </GridLayout>
-    <GridLayout rows="200">
-        <RadListView [items]="deviceList">
+
+-->
+
+<GridLayout columns="*, *, *, *" rows="50px, 100px, 100px, *" tkExampleTitle tkToggleNavButton class="main-griddy">
+        <!-- >> gauges-getting-started-angular-html -->
+            <!-- >> gauges-animations-angular-html -->
+            <Label col="0" row="0" colSpan="2" text="UV absorption for today:"></Label>
+            <RadRadialGauge col="0" row="1" colSpan="2" rowSpan="2" class="gauge">
+                    <RadialScale #myScale tkRadialGaugeScales startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.9">
+                        <ScaleStyle tkRadialScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0"></ScaleStyle>
+            
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="100" location="1">
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgba(224,151,36,0.5)" barWidth="0.2"></BarIndicatorStyle>
+                        </RadialBarIndicator>
+            
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="0" location="1" isAnimated="true">
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgba(224,151,36,1)" barWidth="0.2"></BarIndicatorStyle>
+                        </RadialBarIndicator>
+            
+                        <!--<RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="100" location="0.75">
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgba(196,241,57,0.5)" barWidth="0.2"></BarIndicatorStyle>
+                        </RadialBarIndicator>
+            
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="0" location="0.75" isAnimated="true">
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgba(196,241,57,1)" barWidth="0.2"></BarIndicatorStyle>
+                        </RadialBarIndicator>
+            
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="100" location="1">
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgba(132,235,247,0.5)" barWidth="0.2"></BarIndicatorStyle>
+                        </RadialBarIndicator>
+            
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="0" location="1" isAnimated="true">
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgba(132,235,247,1)" barWidth="0.2"></BarIndicatorStyle>
+                        </RadialBarIndicator>-->
+                    </RadialScale>
+            </RadRadialGauge>.
+            <Label col="2" row="1" text="it's hot!"></Label>
+            <Image col="3" row="1" src="~/app/images/sunset.png" class="img-rounded p-1-15"></Image>
+            <ListView row="3" colSpan="4" [items]="this.news">
+                <ng-template let-item="item">
+                    <GridLayout class="list-group-item" rows="*" columns="auto, *">
+                    <Image col="0" src="~/app/images/sunny.png" class="thumb img-circle"></Image>
+                    <StackLayout col="1" class="list-group-item">
+                        <Label text="Header" class="list-group-item-heading"></Label>
+                        <Label [text]="item" class="list-group-item-text" textWrap="true"></Label>
+                    </StackLayout>
+                </GridLayout>
+                </ng-template>
+            </ListView>
+        <!-- << gauges-getting-started-angular-html -->
+</GridLayout>
+    <!--<GridLayout rows="200">
+        <RadListView [items]="this.serviceList">
           <ng-template let-item="item">
-            <button [text]="item.name" (tap)="connect(item.name)" class="p-15"></button>
+            <button [text]="item.UUID" class="p-15"></button>
           </ng-template>
         </RadListView>
         
     </GridLayout>
+    
     <GridLayout>
-        <RadListView [items]="serviceList">
+        <RadListView [items]="this.bluetoothService.serviceList">
             <ng-template let-item="item">
-                <Label [text]="item" class="p-15"></Label>
+                <Label [text]="item.UUID" class="p-15"></Label>
             </ng-template>
         </RadListView>
     </GridLayout>
-
+    --->
     
 </StackLayout>

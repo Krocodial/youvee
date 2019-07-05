@@ -1,26 +1,33 @@
-import { Injectable } from "@angular/core";
+import { Injectable, resolveForwardRef, NgZone } from "@angular/core";
 import { Observable } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 import { from } from 'rxjs';
 import { Bluetooth } from "./bluetooth.model";
 import { config } from "./configuration.model";
+//import { deviceInfo } from "./connection.info";
 
 import * as observableArray from "tns-core-modules/data/observable-array";
 import * as bluetooth from "nativescript-bluetooth";
-
+import * as appSettings from "tns-core-modules/application-settings";
 
 @Injectable()
 export class BluetoothService{
     deviceList: Array<Bluetooth>;
-    test;
+    serviceList = [];
+    connected: boolean;
+    uuid = '';
+    discoveredServices = new observableArray.ObservableArray();
 
-    constructor() {
-        this.test = 0;        
+    constructor(private _ngZone: NgZone) {
+        this.connected = false;
+        //this.serviceList = new observableArray.ObservableArray(); 
     }
 
     register(config: config) {
         alert("Bluetooth run");
     }
+
+    
 
     scan() {
 
@@ -28,7 +35,7 @@ export class BluetoothService{
 
         return from(bluetooth.startScanning({
             serviceUUIDs: [],
-            seconds: 2,
+            seconds: 1,
             onDiscovered: (peripheral) => {
                 if (peripheral.name) {
                     opa.push({'uuid': peripheral.UUID, 'name': peripheral.name});
@@ -48,28 +55,38 @@ export class BluetoothService{
         
     }
 
-/*
-    scan() {
-        var bluetooth = require("nativescript-bluetooth");
-        var observable = require("tns-core-modules/data/observable");
-        var observableArray = require("tns-core-modules/data/observable-array");
-
-        return bluetooth.isBluetoothEnabled();
-        this.http.post(
-            Config.apiUrl + "user/" + Config.appKey,
-            JSON.stringify({
-                username: user.email,
-                email: user.email,
-                password: user.password
-            }),
-            { headers: this.getCommonHeaders() }
-        ).pipe(
-            catchError(this.handleErrors)
-        );
+    onConnected(peripheral) {
+        console.log("peripheral connected with uuid: " + peripheral.UUID);
+        this.connected = true;
+        //var serviceList = [];
+        peripheral.services.forEach((service) => {
+            this.discoveredServices.push(service);
+            //serviceList.push(service);
+        });    
+        //this.serviceList = serviceList;
     }
-*/
 
-    async connect(uuid) {
+    connect(uuid) {
+        //var opa = new observableArray.ObservableArray();
+        //var discoveredServices = new observableArray.ObservableArray();
+        return from(bluetooth.connect({
+            UUID: uuid,
+            onConnected: (peripheral) => {
+                this.onConnected(peripheral)
+            },
+            onDisconnected: (peripheral) => {
+                this.connected = false;
+                console.log("peripheral disconnected with uuid: " + peripheral.UUID);
+            }
+            //return this.serviceList;
+
+        })
+    );
+        
+    }
+
+
+ /*   async connect(uuid) {
         var bluetooth = require("nativescript-bluetooth");
         var observable = require("tns-core-modules/data/observable");
         var observableArray = require("tns-core-modules/data/observable-array");
@@ -103,60 +120,6 @@ export class BluetoothService{
         //console.log(await serviceList);
         return services;
         
-    }
-
-    /*
-    async scan() {
-        
-        var bluetooth = require("nativescript-bluetooth");
-        var observable = require("tns-core-modules/data/observable");
-        var observableArray = require("tns-core-modules/data/observable-array");
-
-        var opa = new observableArray.ObservableArray();
-    
-        var test = 1;
-
-        var devices = await bluetooth.isBluetoothEnabled().then(
-            function(enabled){
-                //var opa = opa1;
-                console.log("Enabled? " + enabled);
-                return bluetooth.startScanning({
-                    serviceUUIDs: [],
-                    seconds: 4,
-                    onDiscovered: function(periph){
-                        //if (periph.hasOwnProperty('name')) {
-                        //    console.log('slkdjfsdjf    sl;kdjfsoidjfl');
-                        //}
-                        if (periph.name) {
-                            console.log(periph.name)
-                            opa.push(observable.fromObject(periph));
-                        }
-                        //console.log(observable.fromObject(periph));
-                        //deviceList.push({UUID: String(periph.name)});
-                    }
-                }).then(function() {
-                    var tmp = [];
-                    opa.forEach((item) => {
-                        tmp.push({name: item._map.UUID, id: item._map.name});
-                        //console.log(item);
-                    })
-                    console.log("scanning complete");
-                    return tmp;
-                }, function(err) {
-                    console.log("error while scanning: " + err);
-                    return [];
-                });
-
-            }
-        );   
-        //console.log("-------------------");
-        //console.log(devices.length);
-        //console.log("-------------------");
-        //console.log(devices);
-        return devices;
-    }
-    */
-
-  
+    }*/
     
 }

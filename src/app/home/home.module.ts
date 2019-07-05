@@ -1,7 +1,7 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
-
+import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
@@ -10,7 +10,8 @@ import { HomeComponent } from "./home.component";
     imports: [
         NativeScriptCommonModule,
         NativeScriptUIListViewModule,
-        HomeRoutingModule
+        HomeRoutingModule,
+        NativeScriptUIGaugeModule
     ],
     declarations: [
         HomeComponent
