@@ -1,7 +1,6 @@
-export class Bluetooth {
-    uuid: string;
-    name: string;
-    /*constructor(public id: string, public name: string) {
 
-    }*/
+export class Bluetooth {
+    uuid: string = '';
+    name: string = '';
+    services: [] = [];
 }

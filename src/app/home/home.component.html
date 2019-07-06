@@ -2,16 +2,16 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<StackLayout>
-    <GridLayout columns="*, *, *, *, *, *" rows="auto, auto, auto">
+<StackLayout class="page">
+    <!--<GridLayout columns="*, *, *, *, *, *" rows="auto, auto, auto">
         <Label row="0" col="0" colSpan="3" rowSpan="1" *ngIf="this.bluetoothService.connected" text="Connected"></Label>
         <Label row="0" col="3" colSpan="3" rowSpan="1" *ngIf="this.bluetoothService.connected" [text]="this.bluetoothService.name"></Label>
 
         <Label row="0" col="1" colSpan="2" rowSpan="1" *ngIf="!this.bluetoothService.connected" text="Disconnected"></Label>
         <Button row="0" col="3" colSpan="2" rowSpan="1" *ngIf="!this.bluetoothService.connected" text="Connect to device" class="btn btn-rounded-sm btn-primary" (tap)="this.busy=true;scan()"></Button>
-        <!--<ActivityIndicator row="1" [busy]="this.busy" width="100" height="100" class="activity-indicator"></ActivityIndicator>
-        <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>-->
-    </GridLayout>
+        <ActivityIndicator row="1" [busy]="this.busy" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>
+    </GridLayout>-->
     
     <!--
     <GridLayout columns="*, *" rows="55, 55, 55">
@@ -26,11 +26,31 @@
 
 -->
 
-<GridLayout columns="*, *, *, *" rows="50px, 100px, 100px, *" tkExampleTitle tkToggleNavButton class="main-griddy">
+<GridLayout columns="*, *, *, *" rows="auto, *, *, *, *" tkExampleTitle tkToggleNavButton class="main-griddy">
+        <Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Connected" class="body"></Label>
+        <Label row="0" col="2" colSpan="2" rowSpan="1" *ngIf="this.connected" [text]="this.bluetoothService.name"></Label>
+
+        <Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Disconnected" class="body"></Label>
+        <Button row="0" col="2" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Connect" class="btn btn-rounded-sm btn-primary" (tap)="this.busy=true;scan()"></Button>
+        <!--<ActivityIndicator row="1" [busy]="this.busy" width="100" height="100" class="activity-indicator"></ActivityIndicator>
+        <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>-->
+
+        <ListView row="1" col="0" colSpan="4" *ngIf="this.connected" [items]="this.bluetoothService.discoveredServices['_array']" class="list-group">
+            <ng-template let-item="item">
+                <label [text]="item.UUID" class="body"></label>
+                        <ng-template let-char="item.characteristics">
+                            <Label [text]="char.UUID" class="body"></Label>
+                        </ng-template>
+            </ng-template>
+        </ListView>
+        
+
         <!-- >> gauges-getting-started-angular-html -->
             <!-- >> gauges-animations-angular-html -->
-            <Label col="0" row="0" colSpan="2" text="UV absorption for today:"></Label>
-            <RadRadialGauge col="0" row="1" colSpan="2" rowSpan="2" class="gauge">
+            <Label col="0" row="2" colSpan="2" text="Header:"></Label>
+            <Label col="2" row="2" text="it's hot!"></Label>
+            <Image col="3" row="2" src="~/app/images/sunset.png" class="img-rounded p-1-15"></Image>
+            <RadRadialGauge col="1" row="3" colSpan="2" rowSpan="2" class="gauge">
                     <RadialScale #myScale tkRadialGaugeScales startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.9">
                         <ScaleStyle tkRadialScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0"></ScaleStyle>
             
@@ -59,9 +79,8 @@
                         </RadialBarIndicator>-->
                     </RadialScale>
             </RadRadialGauge>.
-            <Label col="2" row="1" text="it's hot!"></Label>
-            <Image col="3" row="1" src="~/app/images/sunset.png" class="img-rounded p-1-15"></Image>
-            <ListView row="3" colSpan="4" [items]="this.news">
+            
+            <!--<ListView row="3" colSpan="4" [items]="this.news">
                 <ng-template let-item="item">
                     <GridLayout class="list-group-item" rows="*" columns="auto, *">
                     <Image col="0" src="~/app/images/sunny.png" class="thumb img-circle"></Image>
@@ -71,7 +90,7 @@
                     </StackLayout>
                 </GridLayout>
                 </ng-template>
-            </ListView>
+            </ListView>-->
         <!-- << gauges-getting-started-angular-html -->
 </GridLayout>
     <!--<GridLayout rows="200">

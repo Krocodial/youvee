@@ -1,9 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { isAndroid } from "tns-core-modules/platform";
+import { BluetoothService } from "~/app/shared/bluetooth.service";
 
 @Component({
     moduleId: module.id,
     selector: "ns-app",
+    providers: [BluetoothService],
     templateUrl: "app.component.html"
 })
 export class AppComponent implements OnInit {
