@@ -24,6 +24,7 @@ import { RadialNeedle } from "nativescript-ui-gauge";
 
 import {ImageSource, fromFile, fromResource, fromBase64} from "tns-core-modules/image-source";
 import {Folder, path, knownFolders} from "tns-core-modules/file-system";
+import { NotificationService } from "../shared/notification.service";
 
 
 @Component({
@@ -50,7 +51,7 @@ export class HomeComponent implements OnInit {
     discoveredServices = new observableArray.ObservableArray();
     news;
 
-    constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone) {
+    constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone, private notificationService: NotificationService) {
         //this.connected = bluetoothService.connected;
         //deviceInfo.connected = false;
         //this.config = new config();
@@ -74,7 +75,7 @@ export class HomeComponent implements OnInit {
         //this.deviceList = this.bluetoothService.scan();
         //this.devices = this.bluetoothService.scan();
         
-        //this.page.actionBarHidden = true;
+        this.page.actionBarHidden = true;
         
         //this.perphs = this.peripheralService.getPeripherals();
         // Init your component properties here.

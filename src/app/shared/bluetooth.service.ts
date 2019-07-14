@@ -87,7 +87,34 @@ export class BluetoothService{
         peripheral.services.forEach((service) => {
             this.discoveredServices.push(service);
             //serviceList.push(service);
+            service['characteristics'].forEach((char) => {
+                this.device.services.push(char.UUID);
+            });
+            
+        
+
         });    
+        /*bluetooth.startNotifying({
+            peripheralUUID: this.device.uuid,
+            serviceUUID: 'F5DA',
+            characteristicUUID: '8888',
+            onNotify: function (result) {
+                console.log(JSON.stringify(result));
+            }
+        }).then(function() {
+            console.log("subscribed for notifs");
+        });
+
+        bluetooth.write({
+            peripheralUUID: this.device.uuid,
+            serviceUUID: 'F5DA',
+            characteristicUUID: '8888',
+            value: '0x01' // a hex 1
+          }).then(function(result) {
+            console.log("value written");
+          }, function (err) {
+            console.log("write error: " + err);
+          });*/
 
         //console.log(this.discoveredServices);
         //this.serviceList = serviceList;
@@ -106,6 +133,7 @@ export class BluetoothService{
                 appSettings.setString("uuid", this.device.uuid);
                 appSettings.setString("name", this.device.name);
                 this.ref.detectChanges();
+                console.log(this.discoveredServices);
             },
             onDisconnected: (peripheral) => {
                 this.connected.next(false);
