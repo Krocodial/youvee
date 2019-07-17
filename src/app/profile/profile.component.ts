@@ -1,27 +1,67 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
+import { Page } from "tns-core-modules/ui/page";
+import { getNumber } from "tns-core-modules/application-settings";
+import { FileReaderService } from "../shared/fileReader.service";
+//let json = require("../shared/questions");
+import { json } from "../shared/questions";
 
-/* ***********************************************************
-* Before you can navigate to this page from your app, you need to reference this page's module in the
-* global app router module. Add the following object to the global array of routes:
-* { path: "profile", loadChildren: "./profile/profile.module#ProfileModule" }
-* Note that this simply points the path to the page module file. If you move the page, you need to update the route too.
-*************************************************************/
 
 @Component({
     selector: "Profile",
     moduleId: module.id,
-    templateUrl: "./profile.component.html"
+    templateUrl: "./profile.component.html",
+    styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-    constructor() {
-        /* ***********************************************************
-        * Use the constructor to inject app services that you need in this component.
-        *************************************************************/
+
+    categories: any[] = [];
+
+    constructor(
+        private routerExtensions: RouterExtensions,
+        private page: Page,
+        private fileReader: FileReaderService
+    ) {
+        this.page.actionBarHidden = true;
     }
 
     ngOnInit(): void {
-        /* ***********************************************************
-        * Use the "ngOnInit" handler to initialize data for this component.
-        *************************************************************/
+        this.getCategories();
+     
+    }
+
+    getCategories() {
+
+        this.categories = json["categories"];
+        this.initializeScore();
+
+        /*this.fileReader.readJSON("./questions.json").then(
+            res => {
+                console.log('hereo');
+                this.categories = res["categories"];
+                this.initializeScore();
+                console.log(this.categories);
+            },
+            err => {
+                console.log('err');
+                console.log('Error reading json: ' + JSON.stringify(err));
+            }
+        )*/
+    }
+
+    initializeScore() {
+        for (let i = 0; i < this.categories.length; i++) {
+            this.categories[i].lastScore = getNumber(this.categories[i].title) || '0';
+        }
+    }
+
+    navigateToQuiz(index: number) {
+        let navigationExtras = {
+            queryParams: {
+                'category': this.categories[index].title,
+                'questions': JSON.stringify(this.categories[index].questions)
+            }
+        };
+        this.routerExtensions.navigate(["/quiz"], navigationExtras);
     }
 }

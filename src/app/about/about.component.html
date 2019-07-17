@@ -1,0 +1,12 @@
+<ActionBar class="action-bar">
+    <Label class="action-bar-title" text="Sign up"></Label>
+</ActionBar>
+<GridLayout rows="*, *, *, *, *" columns="*">
+    <Label row="0" class="h1" style="text-align: center;" text="Terms and Conditions"></Label>
+    <ListView row="1" rowSpan="4" [items]="this.news">
+        <ng-template let-item="item">
+                <Label [text]="item" class="list-group-item-text" textWrap="true"></Label>
+        </ng-template>
+    </ListView>
+
+</GridLayout>

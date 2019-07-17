@@ -14,6 +14,13 @@
     background-color: #808080;
 }
 
+.uv-freq {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+
+}
+
 .main-griddy {
     justify-content: center;
     align-items: center;
@@ -25,7 +32,7 @@
 
 .secondary-main {
     margin: 25px 5% 25px 5%;
-    background-color: #ffffff;
+    background-color: #e2e0e0;
     border-radius: 25px;
 }
 

@@ -133,7 +133,7 @@ export class BluetoothService{
                 appSettings.setString("uuid", this.device.uuid);
                 appSettings.setString("name", this.device.name);
                 this.ref.detectChanges();
-                console.log(this.discoveredServices);
+                //console.log(this.discoveredServices);
             },
             onDisconnected: (peripheral) => {
                 this.connected.next(false);

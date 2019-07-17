@@ -1,53 +1,67 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
+import { Page } from "tns-core-modules/ui/page";
+import { getNumber } from "tns-core-modules/application-settings";
+import { FileReaderService } from "../shared/fileReader.service";
+//let json = require("../shared/questions");
+import { json } from "../shared/questions";
 
-/* ***********************************************************
-* Before you can navigate to this page from your app, you need to reference this page's module in the
-* global app router module. Add the following object to the global array of routes:
-* { path: "settings", loadChildren: "./settings/settings.module#SettingsModule" }
-* Note that this simply points the path to the page module file. If you move the page, you need to update the route too.
-*************************************************************/
 
 @Component({
     selector: "Settings",
     moduleId: module.id,
-    templateUrl: "./settings.component.html"
+    templateUrl: "./settings.component.html",
+    styleUrls: ['./settings.component.css']
 })
 export class SettingsComponent implements OnInit {
-    email: string;
-    password: string;
 
-    constructor() {
-        /* ***********************************************************
-        * Use the constructor to inject app services that you need in this component.
-        *************************************************************/
+    categories: any[] = [];
+
+    constructor(
+        private routerExtensions: RouterExtensions,
+        private page: Page,
+        private fileReader: FileReaderService
+    ) {
+        this.page.actionBarHidden = true;
     }
 
     ngOnInit(): void {
-        /* ***********************************************************
-        * Use the "ngOnInit" handler to initialize data for this component.
-        *************************************************************/
+        this.getCategories();
+     
     }
 
-    onLoginWithSocialProviderButtonTap(): void {
-        /* ***********************************************************
-        * For log in with social provider you can add your custom logic or
-        * use NativeScript plugin for log in with Facebook
-        * http://market.nativescript.org/plugins/nativescript-facebook
-        *************************************************************/
+    getCategories() {
+
+        this.categories = json["categories"];
+        this.initializeScore();
+
+        /*this.fileReader.readJSON("./questions.json").then(
+            res => {
+                console.log('hereo');
+                this.categories = res["categories"];
+                this.initializeScore();
+                console.log(this.categories);
+            },
+            err => {
+                console.log('err');
+                console.log('Error reading json: ' + JSON.stringify(err));
+            }
+        )*/
     }
 
-    onSigninButtonTap(): void {
-        const email = this.email;
-        const password = this.password;
-
-        /* ***********************************************************
-        * Call your custom sign in logic using the email and password data.
-        *************************************************************/
+    initializeScore() {
+        for (let i = 0; i < this.categories.length; i++) {
+            this.categories[i].lastScore = getNumber(this.categories[i].title) || '0';
+        }
     }
 
-    onForgotPasswordTap(): void {
-        /* ***********************************************************
-        * Call your Forgot Password logic here.
-        *************************************************************/
+    navigateToQuiz(index: number) {
+        let navigationExtras = {
+            queryParams: {
+                'category': this.categories[index].title,
+                'questions': JSON.stringify(this.categories[index].questions)
+            }
+        };
+        this.routerExtensions.navigate(["/quiz"], navigationExtras);
     }
 }

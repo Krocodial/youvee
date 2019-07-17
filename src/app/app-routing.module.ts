@@ -5,7 +5,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 
 
 const routes: Routes = [
-    { path: "", redirectTo: "/(homeTab:home/default//settingsTab:settings/default//profileTab:profile/default)", pathMatch: "full" },
+    { path: "", redirectTo: "/(homeTab:home/default//settingsTab:settings/default//aboutTab:about/default)", pathMatch: "full" },
     { path: "home", component: NSEmptyOutletComponent, loadChildren: "~/app/home/home.module#HomeModule", outlet: "homeTab" },
     {
         path: "settings",
@@ -13,12 +13,19 @@ const routes: Routes = [
         loadChildren: "~/app/settings/settings.module#SettingsModule",
         outlet: "settingsTab"
     },
-    {
+    /*{
         path: "profile",
         component: NSEmptyOutletComponent,
         loadChildren: "~/app/profile/profile.module#ProfileModule",
         outlet: "profileTab"
+    },*/
+    {
+        path: "about",
+        component: NSEmptyOutletComponent,
+        loadChildren: "~/app/about/about.module#AboutModule",
+        outlet: "aboutTab"
     }
+
 ];
 
 @NgModule({
