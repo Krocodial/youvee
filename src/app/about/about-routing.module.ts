@@ -5,7 +5,7 @@ import { NativeScriptRouterModule } from "nativescript-angular/router";
 import { AboutComponent } from "./about.component";
 
 const routes: Routes = [
-    { path: "default", component: AboutComponent }
+    { path: "", component: AboutComponent }
 ];
 
 @NgModule({

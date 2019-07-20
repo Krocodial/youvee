@@ -1,18 +1,7 @@
-<TabView androidTabsPosition="bottom">
-
-    <page-router-outlet
-        *tabItem="{title: 'Home', iconSource: getIconSource('home')}"
-        name="homeTab">
-    </page-router-outlet>
-
-    <page-router-outlet
-        *tabItem="{title: 'Settings', iconSource: getIconSource('browse')}"
-        name="settingsTab">
-    </page-router-outlet>
-
-    <page-router-outlet
-        *tabItem="{title: 'About'}"
-        name="aboutTab">
-    </page-router-outlet>
-
-</TabView>
+<GridLayout rows="*, auto" class="page">
+    <StackLayout row="0">
+        <page-router-outlet></page-router-outlet>
+    </StackLayout>
+    <app-bottom-navigation row="1"></app-bottom-navigation>
+</GridLayout>
+<!-- class="page" tkMainContent-->

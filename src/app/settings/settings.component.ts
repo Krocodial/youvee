@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
+import { ActivatedRoute } from "@angular/router";
 import { Page } from "tns-core-modules/ui/page";
 import { getNumber } from "tns-core-modules/application-settings";
 import { FileReaderService } from "../shared/fileReader.service";
@@ -19,13 +20,14 @@ export class SettingsComponent implements OnInit {
 
     constructor(
         private routerExtensions: RouterExtensions,
-        private page: Page,
-        private fileReader: FileReaderService
+        private activeRoute: ActivatedRoute,
+        private page: Page
     ) {
         this.page.actionBarHidden = true;
     }
 
     ngOnInit(): void {
+        this.routerExtensions.navigate([{ outlets: {quiz: ['quiz']}}], {relativeTo: this.activeRoute });
         this.getCategories();
      
     }
@@ -34,19 +36,6 @@ export class SettingsComponent implements OnInit {
 
         this.categories = json["categories"];
         this.initializeScore();
-
-        /*this.fileReader.readJSON("./questions.json").then(
-            res => {
-                console.log('hereo');
-                this.categories = res["categories"];
-                this.initializeScore();
-                console.log(this.categories);
-            },
-            err => {
-                console.log('err');
-                console.log('Error reading json: ' + JSON.stringify(err));
-            }
-        )*/
     }
 
     initializeScore() {
@@ -56,12 +45,16 @@ export class SettingsComponent implements OnInit {
     }
 
     navigateToQuiz(index: number) {
+        
+        //this.routerExtensions.navigate(['quiz'], { relativeTo: this.activeRoute});
+        /*console.log('navigating');
         let navigationExtras = {
             queryParams: {
                 'category': this.categories[index].title,
                 'questions': JSON.stringify(this.categories[index].questions)
             }
         };
-        this.routerExtensions.navigate(["/quiz"], navigationExtras);
+        console.log(navigationExtras);*/
+        //this.routerExtensions.navigate(['/quiz'], navigationExtras);
     }
 }

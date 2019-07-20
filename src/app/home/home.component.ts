@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectorRef, TemplateRef, ViewChild, ElementRef, AfterViewInit, NgZone } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
 import { RadialScale, RadialBarIndicator } from "nativescript-ui-gauge";
 import { config } from "../shared/configuration.model";
 import { BluetoothService } from "../shared/bluetooth.service";
@@ -52,7 +53,7 @@ export class HomeComponent implements OnInit {
     news;
     intensity;
 
-    constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone, private notificationService: NotificationService) {
+    constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone, private notificationService: NotificationService, private routerExtensions: RouterExtensions) {
         //this.connected = bluetoothService.connected;
         //deviceInfo.connected = false;
         //this.config = new config();
