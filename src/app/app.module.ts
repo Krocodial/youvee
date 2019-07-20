@@ -31,7 +31,7 @@ import { BottomNavigationComponent } from "./shared/components/bottom-navigation
     declarations: [
         AppComponent,
         BottomNavigationComponent,
-        HomeComponent,
+        //HomeComponent,
         SettingsComponent,
         AboutComponent,
         QuizComponent

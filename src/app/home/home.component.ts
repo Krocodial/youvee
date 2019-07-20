@@ -78,7 +78,7 @@ export class HomeComponent implements OnInit {
         //this.deviceList = this.bluetoothService.scan();
         //this.devices = this.bluetoothService.scan();
         
-        this.page.actionBarHidden = true;
+        //this.page.actionBarHidden = true;
         
         //this.perphs = this.peripheralService.getPeripherals();
         // Init your component properties here.

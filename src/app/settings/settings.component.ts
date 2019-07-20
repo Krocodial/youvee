@@ -27,7 +27,7 @@ export class SettingsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.routerExtensions.navigate([{ outlets: {quiz: ['quiz']}}], {relativeTo: this.activeRoute });
+        //this.routerExtensions.navigate([{ outlets: {quiz: ['quiz']}}], {relativeTo: this.activeRoute });
         this.getCategories();
      
     }

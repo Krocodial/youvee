@@ -13,7 +13,8 @@ const routes: Routes = [
 
     
     { path: "", redirectTo: '/home', pathMatch: 'full' },
-    { path: "home", component: HomeComponent },
+    { path: "home", loadChildren: "~/app/home/home.module#HomeModule" },
+    //{ path: "home", component: HomeComponent },
     { path: "settings", component: SettingsComponent },
     { path: "about", component: AboutComponent },
     { path: "quiz", component: QuizComponent }

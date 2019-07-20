@@ -1,5 +1,5 @@
 <ActionBar class="action-bar">
-    <Label class="action-bar-title" text="Home"></Label>
+    <Label class="action-bar-title" text="Youvee"></Label>
 </ActionBar>
 
 <StackLayout class="page">
@@ -32,17 +32,17 @@
 
         <!-- >> gauges-getting-started-angular-html -->
             <!-- >> gauges-animations-angular-html -->
-            
-            <RadRadialGauge col="0" row="0" colSpan="4" rowSpan="2" class="gauge" subtitle="15%" title="UV absorption">
+            <StackLayout col="0" row="0" colSpan="4" rowSpan="2" class="gauge">
+            <RadRadialGauge  subtitle="15%" title="UV absorption">
                     <RadialScale #myScale tkRadialGaugeScales startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.9">
                         <ScaleStyle tkRadialScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0"></ScaleStyle>
             
                         <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="100" location="1">
-                            <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgba(224,151,36,0.5)" barWidth="0.1"></BarIndicatorStyle>
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgb(234,217,76, 0.5)" barWidth="0.1"></BarIndicatorStyle>
                         </RadialBarIndicator>
                         
                         <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="0" location="1" isAnimated="true">
-                            <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgba(224,151,36,1)" barWidth="0.1"></BarIndicatorStyle>
+                            <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgb(234,217,76, 1)" barWidth="0.1"></BarIndicatorStyle>
                         </RadialBarIndicator>
             
                         <!--<RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="100" location="0.75">
@@ -62,20 +62,20 @@
                         </RadialBarIndicator>-->
                     </RadialScale>
             </RadRadialGauge>
+        </StackLayout>
         <StackLayout row="2" col="1" colSpan="2" class="uv-freq">
             <Label [text]="this.intensity + ' / 20 UV units'"></Label>
         </StackLayout>
         <StackLayout row="3" col="0" rowSpan="2" colSpan="4" class="secondary-main">
         <GridLayout columns="*, *, *, *" rows="auto, *, *" class="secondary-grid">
-        <Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Connected" class="body"></Label>
-        <Label row="0" col="2" colSpan="2" rowSpan="1" *ngIf="this.connected" [text]="this.bluetoothService.device.name" class="body"></Label>
+        <!--<Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Connected" class="body"></Label>-->
+        <Label row="0" col="1" colSpan="2" rowSpan="1" *ngIf="this.connected" [text]="this.bluetoothService.device.name" class="body" style="text-align: center;"></Label>
 
         <Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Disconnected" class="body"></Label>
         <Button row="0" col="2" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Connect" class="btn btn-rounded-sm btn-primary" (tap)="this.busy=true;scan()"></Button>
-        <!--<ActivityIndicator row="1" [busy]="this.busy" width="100" height="100" class="activity-indicator"></ActivityIndicator>
-        <button row="2" colSpan="2" rowSpan="1" text="Check Array" (tap)="check()" class="btn btn-primary btn-active"></button>-->
+        
 
-        <ListView row="1" col="0" colSpan="4" rowSpan="2" *ngIf="this.connected" [items]="this.bluetoothService.discoveredServices" class="list-group">
+        <!--<ListView row="1" col="0" colSpan="4" rowSpan="2" *ngIf="this.connected" [items]="this.bluetoothService.discoveredServices" class="list-group">
             <ng-template let-item="item">
                 <StackLayout orientation="horizontal" class="list-group-item">
                     <Label [text]="item.UUID" textWrap="true"></Label>
@@ -86,7 +86,7 @@
                     </ListView>   
                 </StackLayout>
             </ng-template>
-        </ListView>
+        </ListView>-->
 
         <!--<Label col="0" row="0" colSpan="2" text="Header:"></Label>
         <Label col="2" row="0" text="it's hot!"></Label>

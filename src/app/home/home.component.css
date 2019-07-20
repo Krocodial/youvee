@@ -11,7 +11,14 @@
 }
 
 .page {
-    background-color: #808080;
+    /*background-color: #808080;*/
+    /*background-color: #51A3A3;
+    background-color: #3B3561;*/
+}
+
+.gauge {
+    background-color: #51A3A3;
+    padding: 50px 0 50px 0;
 }
 
 .uv-freq {
@@ -26,13 +33,19 @@
     align-items: center;
     background-size: cover;
     
-    margin: 25px 5% 25px 5%;
+    /*padding: 25px 5% 25px 5%;*/
+    
     /*background-image: url("https://i.pinimg.com/736x/bf/69/a5/bf69a55f145adb7ac26517d7e85355f4.jpg");*/
+}
+
+StackLayout {
+    padding: 0 0 0 0;
 }
 
 .secondary-main {
     margin: 25px 5% 25px 5%;
-    background-color: #e2e0e0;
+    /*background-color: #e2e0e0;*/
+    background-color: #B8CDF8;
     border-radius: 25px;
 }
 

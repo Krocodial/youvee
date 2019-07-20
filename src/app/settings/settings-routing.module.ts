@@ -7,7 +7,10 @@ import { SettingsComponent } from "./settings.component";
 import { QuizComponent } from "../quiz/quiz.component";
 
 const routes: Routes = [
-    { path: "", component: SettingsComponent, children: [
+    { path: "", component: SettingsComponent }
+    //{ path: "quiz", component: QuizComponent, outlet: "quiz" },
+    /*
+, children: [
         {
             path: "quiz", 
             outlet: "quiz",
@@ -15,8 +18,7 @@ const routes: Routes = [
             loadChildren: "~/app/quiz/quiz.module#QuizModule"
         }
     ] 
-    }
-    //{ path: "quiz", component: QuizComponent, outlet: "quiz" },
+    */
 ];
 
 @NgModule({
