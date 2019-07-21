@@ -42,7 +42,7 @@ export class QuizComponent implements OnInit {
 
 	selectAnswer(answerIndex: number, args: any) {
         let option = <GridLayout>args.object;
-        option.backgroundColor = '#B6EB81';
+        option.backgroundColor = '#EAD94C';
 		/*if (this.questions[this.currentQuestionIndex].correctAnswerIndex == answerIndex) {
 			// correct answer
 			this.score += 1;
@@ -84,6 +84,7 @@ export class QuizComponent implements OnInit {
         if (item.color) {
             return item.color;
         } else {
+            return '#51A3A3';
             return '#4446ff';
         }
     }
@@ -91,7 +92,7 @@ export class QuizComponent implements OnInit {
 	// ------------------------- NAVIGATION -----------------------------
 
 	navigateToScore() {
-        this.routerExtensions.navigate(['/settings']);
+        this.routerExtensions.navigate(['/settings'], { clearHistory: true });
 		/*let navigationExtras = {
 			queryParams: {
 				'score': Math.round(this.score * 100 / this.questions.length)
@@ -101,9 +102,9 @@ export class QuizComponent implements OnInit {
 		this.routerExtensions.navigate(["/score"], navigationExtras);*/
 	}
 
-	navigateToPrevious() {
+	/*navigateToPrevious() {
 		this.routerExtensions.backToPreviousPage();
-	}
+    }*/
 
 
    

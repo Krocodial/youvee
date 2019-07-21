@@ -11,6 +11,8 @@ import { SettingsComponent } from "./settings/settings.component";
 import { AboutComponent } from "./about/about.component";
 import { QuizComponent } from "./quiz/quiz.component";
 import { RouterModule } from "@angular/router";
+import { StatsComponent } from "./stats/stats.component";
+import { DeviceComponent } from "./device/device.component";
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { ModalDialogService } from "nativescript-angular/modal-dialog";
@@ -34,7 +36,9 @@ import { BottomNavigationComponent } from "./shared/components/bottom-navigation
         //HomeComponent,
         SettingsComponent,
         AboutComponent,
-        QuizComponent
+        QuizComponent,
+        StatsComponent,
+        DeviceComponent
         //QuizComponent,
     ],
     providers: [

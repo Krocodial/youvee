@@ -2,22 +2,22 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<GridLayout rows="auto, auto, *, auto" columns="*, auto" backgroundColor="#0D0735"
-    padding="15">
+<GridLayout rows="auto, auto, *, auto" columns="*, auto" backgroundColor="#3B3561"
+    padding="15"> <!--#0D0735-->
 
     <Label row="0" col="0" color="#fff" fontSize="15" fontWeight="bold"
         [text]="'QUESTION ' + (currentQuestionIndex + 1) + '/' + questions.length"></Label>
     <Label row="0" col="1" color="#fff" fontSize="15" fontWeight="bold" text="END"
         (tap)="end()"></Label>
 
-    <GridLayout row="1" col="0" colSpan="2" backgroundColor="#4A4A4A" height="20"
-        borderRadius="10" margin="10 0">
+    <GridLayout row="1" col="0" colSpan="2" backgroundColor="#DD7373" height="20"
+        borderRadius="10" margin="10 0"><!--#4A4A4A-->
         <StackLayout horizontalAlignment="left" backgroundColor="#B6EB81"
             height="20" borderRadius="10" [width]="(currentQuestionIndex * 100 / questions.length) + '%'"></StackLayout>
     </GridLayout> 
 
-    <GridLayout row="2" col="0" colSpan="2" backgroundColor="#250046" margin="5"
-        borderRadius="10">
+    <GridLayout row="2" col="0" colSpan="2" backgroundColor="#B8CDF8" margin="5"
+        borderRadius="10"><!--#250046-->
         <Label verticalAlignment="center" horizontalAlignment="center"
             textAlignment="center" color="#fff" fontSize="20" fontWeight="bold"
             textWrap="true" [text]="questions[currentQuestionIndex].question"></Label>

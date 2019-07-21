@@ -1,0 +1,45 @@
+<ActionBar class="action-bar">
+        <Label class="action-bar-title" style="font-family: 'Karma', serif;" text="Device Information"></Label>
+</ActionBar>
+
+<StackLayout class="page">
+    <StackLayout *ngIf="this.connected" [items]="this.bluetoothService.device.services">
+        <Label [text]="this.bluetoothService.device.name" class="h2" style="text-align: center; margin-top: 25px;"></Label>
+        <Label [text]="this.bluetoothService.device.uuid" class="h4" style="text-align: center; margin-bottom: 50px;"></Label>
+    
+    </StackLayout>
+    <GridLayout rows="*, *" columns="*">
+        <StackLayout col="0" row="0" *ngIf="this.connected">
+        <Label text="Services"></Label>
+        <ListView [items]="this.bluetoothService.device.services" class="list-group">
+            <ng-template let-item="item">
+                <StackLayout class="list-group-item">
+                    <Label [text]="item.name" class="h4" textWrap="true"></Label>
+                    <Label [text]="item.UUID" class="h5" textWrap="true"></Label>
+                </StackLayout>
+            </ng-template>
+        </ListView>
+    </StackLayout>
+
+    <StackLayout col="0" row="1" *ngIf="this.connected">
+        <Label text="Characteristics"></Label>
+        <ListView [items]="this.bluetoothService.device.characteristics" class="list-group">
+                <ng-template let-item="item">
+                        <StackLayout class="list-group-item">
+                            <Label [text]="item.name" class="h4" textWrap="true"></Label>
+                            <Label [text]="item.UUID" class="h5" textWrap="true"></Label>
+                        </StackLayout>
+                    </ng-template>
+        </ListView>
+    </StackLayout>
+
+    </GridLayout>
+</StackLayout>
+
+
+
+<!--<ListView *ngIf="this.connected" [items]="item.characteristics" class="list-group">
+                            <ng-template let-item="item">
+                                <Label [text]="item.UUID" textWrap="true"></Label>
+                            </ng-template>
+                        </ListView>-->

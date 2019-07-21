@@ -87,8 +87,11 @@ export class BluetoothService{
         peripheral.services.forEach((service) => {
             this.discoveredServices.push(service);
             //serviceList.push(service);
+            this.device.services.push(service);
+            //this.device.characteristics[service.UUID] = []
             service['characteristics'].forEach((char) => {
-                this.device.services.push(char.UUID);
+                this.device.characteristics.push(char);
+                //this.device.services.push(char.UUID);
             });
             
         

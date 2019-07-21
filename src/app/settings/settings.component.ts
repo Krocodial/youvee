@@ -45,7 +45,13 @@ export class SettingsComponent implements OnInit {
     }
 
     navigateToQuiz(index: number) {
-        
+        if (index == 0) {
+            this.routerExtensions.navigate(['quiz']);
+        } else if (index == 1) {
+            this.routerExtensions.navigate(['stats']);
+        } else {
+            this.routerExtensions.navigate(['device']);
+        }
         //this.routerExtensions.navigate(['quiz'], { relativeTo: this.activeRoute});
         /*console.log('navigating');
         let navigationExtras = {

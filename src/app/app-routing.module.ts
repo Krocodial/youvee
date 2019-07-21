@@ -8,6 +8,8 @@ import { HomeComponent } from "./home/home.component";
 import { SettingsComponent } from "./settings/settings.component";
 import { AboutComponent } from "./about/about.component";
 import { QuizComponent } from "./quiz/quiz.component";
+import { StatsComponent } from "./stats/stats.component";
+import { DeviceComponent } from "./device/device.component";
 
 const routes: Routes = [
 
@@ -17,7 +19,9 @@ const routes: Routes = [
     //{ path: "home", component: HomeComponent },
     { path: "settings", component: SettingsComponent },
     { path: "about", component: AboutComponent },
-    { path: "quiz", component: QuizComponent }
+    { path: "quiz", component: QuizComponent },
+    { path: "stats", component: StatsComponent },
+    { path: "device", component: DeviceComponent }
 
     
     //{ path: "", redirectTo: "/(home:home//settings:settings//about:about//)", pathMatch: "full" },
