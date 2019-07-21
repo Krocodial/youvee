@@ -23,7 +23,7 @@ export class SettingsComponent implements OnInit {
         private activeRoute: ActivatedRoute,
         private page: Page
     ) {
-        this.page.actionBarHidden = true;
+        //this.page.actionBarHidden = true;
     }
 
     ngOnInit(): void {

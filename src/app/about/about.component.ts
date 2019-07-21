@@ -30,7 +30,7 @@ export class AboutComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.page.actionBarHidden = true;
+        //this.page.actionBarHidden = true;
         /* ***********************************************************
         * Use the "ngOnInit" handler to initialize data for this component.
         *************************************************************/
