@@ -9,8 +9,8 @@
             <GridLayout *ngFor="let item of categories; let i = index" rows="auto, auto, *, auto"
                 columns="*, auto" height="250" [backgroundColor]="item.backgroundColor"
                 padding="20" [nsRouterLink]="['/quiz']"  >
-                <Image row="0" rowSpan="3" col="1" [src]="item.image" height="150"
-                    width="150"></Image>
+                <Image row="0" rowSpan="3" col="1" [src]="item.image" height="80"
+                    width="80"></Image>
                 <Label row="0" col="0" colSpan="2" color="#fff" fontSize="15"
                     [text]="'Last Done - ' + item.quizDate"></Label>
                 <Label row="1" col="0" colSpan="2" color="#fff" fontSize="15"
