@@ -67,9 +67,10 @@
             <Label [text]="this.intensity + ' / 20 UV units'"></Label>
         </StackLayout>
         <StackLayout row="3" col="0" rowSpan="2" colSpan="4" class="secondary-main">
-        <GridLayout columns="*, *, *, *" rows="auto, *, *" class="secondary-grid">
+        <GridLayout columns="*, *, *, *" rows="auto, auto, *, *" class="secondary-grid">
         <!--<Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Connected" class="body"></Label>-->
         <Label row="0" col="1" colSpan="2" rowSpan="1" *ngIf="this.connected" [text]="this.bluetoothService.device.name" class="body" style="text-align: center;"></Label>
+        <Button row="1" col="1" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Disconnect" class="btn btn-rounded-sm btn-primary" (tap)="this.bluetoothService.disconnect()"></Button>
 
         <Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Disconnected" class="body"></Label>
         <Button row="0" col="2" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Connect" class="btn btn-rounded-sm btn-primary" (tap)="this.busy=true;scan()"></Button>

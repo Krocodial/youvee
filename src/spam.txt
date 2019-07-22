@@ -1,0 +1,720 @@
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:721:24: DF3402B7-7755-0F32-FBD3-2EE1AB0DBF92
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:722:24: Adafruit Bluefruit LE
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: Adafruit Bluefruit LE @ -69
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:669:20: Connecting to peripheral with UUID: DF3402B7-7755-0F32-FBD3-2EE1AB0DBF92
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -53
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -69
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -83
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:494:16: ----- delegate centralManager:didConnectPeripheral: <CBPeripheral: 0x282251360, identifier = DF3402B7-7755-0F32-FBD3-2EE1AB0DBF92, name = Adafruit Bluefruit LE, state = connected>
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:498:16: ----- delegate centralManager:didConnectPeripheral: cached perio: <CBPeripheral: 0x282251360, identifier = DF3402B7-7755-0F32-FBD3-2EE1AB0DBF92, name = Adafruit Bluefruit LE, state = connected>
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:505:16: ----- delegate centralManager:didConnectPeripheral, let's discover service
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -93
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -83
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -65
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -97
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -95
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/vendor.js:457:16: ----- delegate centralManager:didDiscoverPeripheral: null @ -85
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:774:20: peripheral connected with uuid: DF3402B7-7755-0F32-FBD3-2EE1AB0DBF92
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:755:14: --- _findCharacteristic characteristics: (
+    "<CBCharacteristic: 0x28375c5a0, UUID = 6E400003-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0x10, value = (null), notifying = NO>",
+    "<CBCharacteristic: 0x28375c060, UUID = 6E400002-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0xC, value = (null), notifying = NO>"
+)
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:755:14: --- _findCharacteristic characteristics: (
+    "<CBCharacteristic: 0x28375c5a0, UUID = 6E400003-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0x10, value = (null), notifying = NO>",
+    "<CBCharacteristic: 0x28375c060, UUID = 6E400002-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0xC, value = (null), notifying = NO>"
+)
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:755:14: --- _findCharacteristic characteristics: (
+    "<CBCharacteristic: 0x28375c5a0, UUID = 6E400003-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0x10, value = (null), notifying = NO>",
+    "<CBCharacteristic: 0x28375c060, UUID = 6E400002-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0xC, value = (null), notifying = NO>"
+)
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:861:18: "--------- startNotifying wrapper: [object Object]"
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:861:18: "--------- startNotifying wrapper: [object Object]"
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:861:18: "--------- startNotifying wrapper: [object Object]"
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:814:28: subscribed for notifications
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:814:28: subscribed for notifications
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:814:28: subscribed for notifications
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:389:16: ----- delegate peripheral:didUpdateNotificationStateForCharacteristic:error, error: null
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:395:20: ------ Notification began on <CBCharacteristic: 0x28375c5a0, UUID = 6E400003-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0x10, value = (null), notifying = YES>
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 7.61
+Per
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/vendor.js:389:16: ----- delegate peripheral:didUpdateNotificationStateForCharacteristic:error, error: null
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:395:20: ------ Notification began on <CBCharacteristic: 0x28375c5a0, UUID = 6E400003-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0x10, value = <63656e74 206f6620 55562061 62736f72 62656420>, notifying = YES>
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: before burn: 0.03
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/vendor.js:389:16: ----- delegate peripheral:didUpdateNotificationStateForCharacteristic:error, error: null
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/vendor.js:395:20: ------ Notification began on <CBCharacteristic: 0x28375c5a0, UUID = 6E400003-B5A3-F393-E0A9-E50E24DCCA9E, properties = 0x10, value = <6265666f 72652062 75726e3a 20302e30 330d0a>, notifying = YES>
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: bed: 8.06
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.03
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: nt of UV absorbed b
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed: 8.42
+Perce
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: efore burn: 0.03
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed befor
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 8.88
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: e burn: 0.03
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: nt of UV absorbed b
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV a
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed: 9.25
+Perce
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: efore burn: 0.03
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed before burn:
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 9.60
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abs
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0.03
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d: 9.97
+Percent of
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.03
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: To
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: tal UV absorbed: 10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .34
+Percent of UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed before burn
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 0.03
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed before b
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  10.70
+Percent of U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: urn: 0.04
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d: 11.16
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed before
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  burn: 0.04
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .04
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 11.61
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 11.98
+Per
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tota
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: l UV absorbed: 12.3
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.04
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 6
+Percent of UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.04
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  burn: 0.04
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 12.81
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 13.27
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: .04
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  13.64
+Percent of
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.05
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed befor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed: 14.15
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: e burn: 0.05
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed: 14.61
+P
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: ercent of UV absorb
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: ed before burn: 0.05
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0
+Percent of UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 15.0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.05
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 15.45
+Percent
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: ore burn: 0.05
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  of UV absorbed bef
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 15.96
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed before burn: 0.0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Percent of UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 5
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 16.36
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed before burn: 0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .05
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 16.7
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 8
+Percent of UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.06
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 17.15
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.06
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 17.66
+Percent
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.06
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  of UV absorbed befo
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed: 18.09
+Percen
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: t of UV absorbed bef
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ore burn: 0.06
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.06
+Total
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed: 18.49
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 18.89
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abs
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .06
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed before burn: 0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 19.30
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Percent of UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed before burn: 0.0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 6
+Total UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: e burn: 0.07
+Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed befor
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: d: 19.70
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: U
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV absor
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 20.16
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: 07
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed before burn: 0.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: t of UV absorbed be
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed: 20.56
+Percen
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV abs
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: fore burn: 0.07
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  20.98
+Percent of
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.07
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 21.39
+Percent of
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.07
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.07
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 22.20
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 21.79
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .07
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: T
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .57
+Percent of UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: otal UV absorbed: 22
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed before bur
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: n: 0.08
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tota
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 7
+Percent of UV abs
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: l UV absorbed: 22.9
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0.08
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 23.38
+Pe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rcent of UV absorbed
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.08
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbe
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 23.89
+Per
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d before burn: 0.08
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  of UV absorbed befo
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 24.29
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: r
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: e burn: 0.08
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV abs
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed: 24.71
+Perce
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: fore burn: 0.08
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: nt of UV absorbed be
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 25.08
+Pe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.08
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rcent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ercent of UV absorbe
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 25.46
+P
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 8
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d before burn: 0.0
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 25.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 83
+Percent of UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.09
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abs
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tota
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: l UV absorbed: 26.23
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0.09
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed: 26.60
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 09
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d before burn: 0.09
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed: 27.01
+P
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ercent of UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d: 27.38
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  burn: 0.09
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 80
+Percent of UV a
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: To
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: tal UV absorbed: 27.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 0.09
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed before burn
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.09
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed: 28.23
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 63
+Percent of UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 28.
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed before bur
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: T
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: otal UV absorbed: 2
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: n: 0.10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 9.03
+Percent of UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ore burn: 0.10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: t of UV absorbed bef
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed: 29.46
+Percen
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: tal UV absorbed: 29.
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 83
+Percent of UV a
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: To
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed before burn
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 0.10
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 30.20
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed: 3
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed before bu
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rn: 0.10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0.60
+Percent of UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed: 31.01
+Per
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV a
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: l UV absorbed: 31.41
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abs
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tota
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0.10
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  of UV absorbed befo
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 31.84
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.11
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rcent of UV absorbed
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 32.34
+Pe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.11
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 75
+Percent of UV a
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: To
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: tal UV absorbed: 32.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed before burn
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d: 33.17
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  burn: 0.11
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 0.11
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ore burn: 0.11
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 33.68
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  of UV absorbed bef
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 34.08
+Per
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.11
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Percent of UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed: 34.59
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed before burn: 0.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 12
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: before burn: 0.12
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed: 35.01
+Per
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV a
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  35.52
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.12
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: .12
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 36.33
+Percent of UV
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 35.93
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rn: 0.12
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed before bu
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 36.75
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.12
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: rcent of UV absorbe
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  absorbed: 37.16
+Pe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d before burn: 0.12
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  37.56
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.13
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .13
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 37.98
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 38.36
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Percent of UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed before burn: 0.1
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 3
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  38.73
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: burn: 0.13
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 39.13
+Percent of
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  burn: 0.13
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed before
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 39.54
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Percent of UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed before burn: 0.1
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ore burn: 0.13
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  of UV absorbed bef
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 3
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 39.94
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed befor
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed: 40.34
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: e burn: 0.13
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: f UV absorbed befor
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d: 40.75
+Percent o
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: e burn: 0.14
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: To
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed before burn
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 15
+Percent of UV a
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 0.14
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: tal UV absorbed: 41.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  UV absorbed: 41.56
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abs
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: orbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 0.14
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: tal UV absorbed: 41
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: .98
+Percent of UV
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: To
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed before burn
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ent of UV absorbed b
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: : 0.14
+Total UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed: 42.38
+Perc
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: efore burn: 0.14
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV a
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: before burn: 0.14
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed: 42.89
+Per
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 43.26
+Percent of U
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed before bu
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rn: 0.14
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rcent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 43.67
+Pe
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.15
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: V absorbed: 44.07
+P
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total U
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: ercent of UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed before burn: 0.1
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 5
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: before burn: 0.15
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 44.48
+Per
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.15
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 44.85
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bed: 45.25
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.15
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absor
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: UV absorbed: 45.62
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed before burn: 0.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.15
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 
+Percent of UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed: 46.00
+Percent
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 15
+Total UV absorb
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: 40
+Percent of UV a
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 46.
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: bsorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 80
+Percent of UV ab
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.15
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: al UV absorbed: 46.
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV a
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Tot
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: bsorbed: 47.21
+Per
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: before burn: 0.16
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: sorbed before burn:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  0.16
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: d before burn: 0.16
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed: 47.61
+P
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ercent of UV absorbe
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: t of UV absorbed bef
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV abso
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rbed: 48.04
+Percen
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ore burn: 0.16
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorbed: 4
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  absorbed before bu
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: rn: 0.16
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 8.41
+Percent of UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: Total UV
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: absorbed: 48.81
+Per
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: cent of UV absorbed
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32:  before burn: 0.16
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 49.
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: bsorbed before burn
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: 
+Total UV absorbed:
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: 22
+Percent of UV a
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: Total UV absorb
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: re burn: 0.17
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: ed: 49.62
+Percent
+LOG from device Louis's iPhone: 
+CONSOLE LOG file:///app/bundle.js:810:32: : 0.16
+LOG from device Louis's iPhone: CONSOLE LOG file:///app/bundle.js:810:32: of UV absorbed befo

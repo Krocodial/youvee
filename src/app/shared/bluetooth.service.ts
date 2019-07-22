@@ -80,9 +80,21 @@ export class BluetoothService{
         return this.status;
     }
 
+    disconnect() {
+        bluetooth.disconnect({
+            UUID: this.device.uuid
+          }).then(function() {
+            console.log("disconnected successfully");
+          }, function (err) {
+            // in this case you're probably best off treating this as a disconnected peripheral though
+            console.log("disconnection error: " + err);
+          });
+    }
+
     onConnected(peripheral) {
         console.log("peripheral connected with uuid: " + peripheral.UUID);
         //var serviceList = [];
+        //console.log(peripheral);
         this.discoveredServices = new observableArray.ObservableArray()
         peripheral.services.forEach((service) => {
             this.discoveredServices.push(service);
@@ -92,11 +104,60 @@ export class BluetoothService{
             service['characteristics'].forEach((char) => {
                 this.device.characteristics.push(char);
                 //this.device.services.push(char.UUID);
+
             });
             
-        
 
-        });    
+            /*bluetooth.read({
+                peripheralUUID: this.device.uuid,
+                serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                characteristicUUID: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E'
+              }).then(function(result) {
+                // fi. a heartrate monitor value (Uint8) can be retrieved like this:
+                console.log(result);
+                var data = new Uint8Array(result.value);
+                console.log(data);
+                console.log("value is: " + data);  
+              }, funcftion (err) {
+                console.log("read error: " + err);
+              });  sdf */
+
+
+              bluetooth.startNotifying({
+                peripheralUUID: this.device.uuid,
+                serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                characteristicUUID: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
+                onNotify: function (result) {
+                  // see the read example for how to decode AsdfrrayBuffers
+                    //console.log(String.fromCharCode.apply(null, new Uint8Array(result.value)));
+                  //console.log(result.value);
+                    var data = String.fromCharCode.apply(null, new Uint8Array(result.value));
+                    //var data = new Uint8Array(result.value);
+                    console.log(data);
+                    
+                    
+
+                    //console.log(data[1]);
+                  
+                }  
+              }).then(function() {
+                console.log("subscribed for notifications");
+              }, function (err) {
+                  console.log("subscribe error: " + err);
+              });
+
+              /*bluetooth.write({
+                peripheralUUID: this.device.uuid,
+                serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
+                characteristicUUID: '6E400002-B5A3-F393-E0A9-E50E24DCCA9E',
+                value: '0x11' // a hex 1
+              }).then(function(result) {
+                console.log("value written");
+              }, function (err) {
+                console.log("write error: " + err);
+              });*/
+
+        });   
         /*bluetooth.startNotifying({
             peripheralUUID: this.device.uuid,
             serviceUUID: 'F5DA',
