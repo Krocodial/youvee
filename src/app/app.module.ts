@@ -13,6 +13,7 @@ import { QuizComponent } from "./quiz/quiz.component";
 import { RouterModule } from "@angular/router";
 import { StatsComponent } from "./stats/stats.component";
 import { DeviceComponent } from "./device/device.component";
+import { ArtificialComponent } from "./artificial/artificial.component";
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { ModalDialogService } from "nativescript-angular/modal-dialog";
@@ -38,7 +39,8 @@ import { BottomNavigationComponent } from "./shared/components/bottom-navigation
         AboutComponent,
         QuizComponent,
         StatsComponent,
-        DeviceComponent
+        DeviceComponent,
+        ArtificialComponent
         //QuizComponent,
     ],
     providers: [

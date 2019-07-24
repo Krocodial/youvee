@@ -1,5 +1,6 @@
 import { Injectable, resolveForwardRef, NgZone, ChangeDetectorRef} from "@angular/core";
-import { Observable, BehaviorSubject } from "rxjs";
+import { BehaviorSubject } from "rxjs"; //Observable, 
+import { Observable, PropertyChangeData } from "tns-core-modules/data/observable";
 import { catchError, map, tap } from "rxjs/operators";
 import { from } from 'rxjs';
 import { Bluetooth } from "./bluetooth.model";
@@ -22,6 +23,8 @@ export class BluetoothService{
     total;
     percent;
 
+    test_total = new Observable();
+
 
     constructor(private _ngZone: NgZone, private ref: ChangeDetectorRef) {
         //this.connected = new BehaviorSubject<boolean>(false);
@@ -29,6 +32,12 @@ export class BluetoothService{
         this.device = new Bluetooth();
         this.total = 0;
         this.percent = 0;
+        this.test_total.set("total", 0);
+
+        this.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
+          console.log(propertychangeData.propertyName + " has been changed and the new value is: " + propertychangeData.value);
+        });
+
         if (appSettings.hasKey("uuid")) {
             console.log(appSettings.getString("uuid"));
             console.log(appSettings.getString("name"));
@@ -84,10 +93,6 @@ export class BluetoothService{
           })
         );
         
-    }
-
-    conStatus(): Observable<boolean> {
-        return this.status;
     }
 
     disconnect() {

@@ -10,6 +10,7 @@ import { AboutComponent } from "./about/about.component";
 import { QuizComponent } from "./quiz/quiz.component";
 import { StatsComponent } from "./stats/stats.component";
 import { DeviceComponent } from "./device/device.component";
+import { ArtificialComponent } from "./artificial/artificial.component";
 
 const routes: Routes = [
 
@@ -21,14 +22,15 @@ const routes: Routes = [
     { path: "about", component: AboutComponent },
     { path: "quiz", component: QuizComponent },
     { path: "stats", component: StatsComponent },
-    { path: "device", component: DeviceComponent }
+    { path: "device", component: DeviceComponent },
+    { path: "artificial", component: ArtificialComponent }
 
     
     //{ path: "", redirectTo: "/(home:home//settings:settings//about:about//)", pathMatch: "full" },
     /*
     { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", component: NSEmptyOutletComponent, loadChildren: "~/app/home/home.module#HomeModule" },
-    { path: "settings", component: NSEmptyOutletComponent, loadChildren: "~/app/settings/settings.module#SettingsModule" },
+    { path: "settings", component: NSEmptfyOutletComponent, loadChildren: "~/app/settings/settings.module#SettingsModule" },
     { path: "about", component: NSEmptyOutletComponent, loadChildren: "~/app/about/about.module#AboutModule" },
     { path: "quiz", component: NSEmptyOutletComponent, loadChildren: "~/app/quiz/quiz.module#QuizModule" }
     */

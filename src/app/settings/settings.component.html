@@ -11,9 +11,9 @@
                 <Image row="0" rowSpan="3" col="1" [src]="item.image" height="80"
                     width="80"></Image>
                 <Label row="0" col="0" colSpan="2" color="#fff" fontSize="15"
-                    [text]="'Last Done - ' + item.quizDate"></Label>
+                    [text]="item.quizDate"></Label>
                 <Label row="1" col="0" colSpan="2" color="#fff" fontSize="15"
-                    [text]="'Finished - ' + item.lastScore + '%'"></Label>
+                    [text]="item.lastScore"></Label>
                 <Label row="3" col="0" colSpan="2" color="#fff" fontSize="30"
                     [text]="item.title"></Label>
             </GridLayout>

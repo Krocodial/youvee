@@ -35,7 +35,7 @@ export class SettingsComponent implements OnInit {
     getCategories() {
 
         this.categories = json["categories"];
-        this.initializeScore();
+        //this.initializeScore();
     }
 
     initializeScore() {
@@ -49,8 +49,10 @@ export class SettingsComponent implements OnInit {
             this.routerExtensions.navigate(['quiz']);
         } else if (index == 1) {
             this.routerExtensions.navigate(['stats']);
-        } else {
+        } else if (index == 2) {
             this.routerExtensions.navigate(['device']);
+        } else {
+            this.routerExtensions.navigate(['artificial']);
         }
         //this.routerExtensions.navigate(['quiz'], { relativeTo: this.activeRoute});
         /*console.log('navigating');
