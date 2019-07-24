@@ -32,8 +32,8 @@
 
         <!-- >> gauges-getting-started-angular-html -->
             <!-- >> gauges-animations-angular-html -->
-            <StackLayout col="0" row="0" colSpan="4" rowSpan="2" class="gauge">
-            <RadRadialGauge  subtitle="15%" title="UV absorption">
+            <StackLayout col="0" row="0" colSpan="4" rowSpan="3" class="gauge">
+            <RadRadialGauge #myGauge subtitle="{{this.bluetoothService.percent*100}}%" title="UV absorption">
                     <RadialScale #myScale tkRadialGaugeScales startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.9">
                         <ScaleStyle tkRadialScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0"></ScaleStyle>
             
@@ -41,7 +41,7 @@
                             <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgb(234,217,76, 0.5)" barWidth="0.1"></BarIndicatorStyle>
                         </RadialBarIndicator>
                         
-                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="0" location="1" isAnimated="true">
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="{{this.bluetoothService.percent}}" location="1" isAnimated="true">
                             <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgb(234,217,76, 1)" barWidth="0.1"></BarIndicatorStyle>
                         </RadialBarIndicator>
             
@@ -63,17 +63,18 @@
                     </RadialScale>
             </RadRadialGauge>
         </StackLayout>
-        <StackLayout row="2" col="1" colSpan="2" class="uv-freq">
-            <Label [text]="this.intensity + ' / 20 UV units'"></Label>
+        <StackLayout row="3" col="0" colSpan="2" class="uv-freq body">
+            <Label [text]="this.bluetoothService.total + ' UV absorbed'"></Label>
         </StackLayout>
-        <StackLayout row="3" col="0" rowSpan="2" colSpan="4" class="secondary-main">
-        <GridLayout columns="*, *, *, *" rows="auto, auto, *, *" class="secondary-grid">
+        <Label row="3" col="2" colSpan="2" class="uv-freq body" text="15mins until burn"></Label>
+        <StackLayout row="4" col="0" rowSpan="1" colSpan="4" class="secondary-main">
+        <GridLayout columns="*, *" rows="auto" class="secondary-grid">
         <!--<Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Connected" class="body"></Label>-->
-        <Label row="0" col="1" colSpan="2" rowSpan="1" *ngIf="this.connected" [text]="this.bluetoothService.device.name" class="body" style="text-align: center;"></Label>
-        <Button row="1" col="1" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Disconnect" class="btn btn-rounded-sm btn-primary" (tap)="this.bluetoothService.disconnect()"></Button>
+        <Label row="0" col="0" colSpan="1" rowSpan="1" *ngIf="this.connected" [text]="this.bluetoothService.device.name" class="body text-left cus" ></Label>
+        <Button row="0" col="1" colSpan="1" rowSpan="1" *ngIf="this.connected" text="Disconnect" style="background-color: crimson;" class="btn btn-rounded-sm btn-primary cus" (tap)="this.bluetoothService.disconnect()"></Button>
 
-        <Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Disconnected" class="body"></Label>
-        <Button row="0" col="2" colSpan="2" rowSpan="1" *ngIf="!this.connected" text="Connect" class="btn btn-rounded-sm btn-primary" (tap)="this.busy=true;scan()"></Button>
+        <Label row="0" col="0" colSpan="1" rowSpan="1" *ngIf="!this.connected" text="Disconnected" class="body text-left cus"></Label>
+        <Button row="0" col="1" colSpan="1" rowSpan="1" *ngIf="!this.connected" text="Connect" class="btn btn-rounded-sm btn-primary cus" (tap)="this.busy=true;scan()"></Button>
         
 
         <!--<ListView row="1" col="0" colSpan="4" rowSpan="2" *ngIf="this.connected" [items]="this.bluetoothService.discoveredServices" class="list-group">

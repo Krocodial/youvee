@@ -62,6 +62,10 @@ StackLayout {
     width: 100px;
 }
 
+.cus {
+    vertical-align: middle;
+}
+
 button {
     /*background-color: orchid;*/
     /*border-radius: 5;

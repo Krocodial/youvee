@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef, TemplateRef, ViewChild, ElementRef, AfterViewInit, NgZone } from "@angular/core";
 import { RouterExtensions } from "nativescript-angular/router";
-import { RadialScale, RadialBarIndicator } from "nativescript-ui-gauge";
+import { RadialScale, RadialBarIndicator, RadRadialGauge } from "nativescript-ui-gauge";
 import { config } from "../shared/configuration.model";
 import { BluetoothService } from "../shared/bluetooth.service";
 import { Bluetooth } from "../shared/bluetooth.model";
@@ -85,15 +85,16 @@ export class HomeComponent implements OnInit {
     }
 
     @ViewChild("myScale", { static: false }) scaleElement: ElementRef;
-
+    
     ngAfterViewInit() {
+        
         let scale = this.scaleElement.nativeElement as RadialScale;
-        for (let i = 0; i < scale.indicators.length; i++) {
+        /*for (let i = 0; i < scale.indicators.length; i++) {
             let barIndicator = scale.indicators.getItem(i) as RadialBarIndicator;
             if (barIndicator.maximum === 0) {
                 barIndicator.maximum = i * 15;
             }
-        }
+        }*/
     }
 
 

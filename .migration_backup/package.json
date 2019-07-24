@@ -2,10 +2,10 @@
   "nativescript": {
     "id": "org.nativescript.youvee",
     "tns-android": {
-      "version": "6.0.0"
+      "version": "5.4.0"
     },
     "tns-ios": {
-      "version": "6.0.1"
+      "version": "5.4.1"
     }
   },
   "description": "NativeScript Application",
@@ -26,23 +26,23 @@
     "nativescript-bluetooth": "1.3.1",
     "nativescript-local-notifications": "4.0.0",
     "nativescript-theme-core": "~1.0.4",
-    "nativescript-ui-autocomplete": "5.0.0",
-    "nativescript-ui-calendar": "5.0.0",
-    "nativescript-ui-chart": "5.0.0",
-    "nativescript-ui-dataform": "5.0.0",
-    "nativescript-ui-gauge": "5.0.0",
-    "nativescript-ui-listview": "7.0.0",
-    "nativescript-ui-sidedrawer": "7.0.0",
+    "nativescript-ui-autocomplete": "4.1.1",
+    "nativescript-ui-calendar": "4.1.0",
+    "nativescript-ui-chart": "4.0.2",
+    "nativescript-ui-dataform": "4.0.1",
+    "nativescript-ui-gauge": "4.0.0",
+    "nativescript-ui-listview": "6.4.0",
+    "nativescript-ui-sidedrawer": "6.0.0",
     "reflect-metadata": "~0.1.12",
     "rxjs": "~6.5.0",
-    "tns-core-modules": "6.0.1",
+    "tns-core-modules": "~5.4.0",
     "zone.js": "~0.9.1"
   },
   "devDependencies": {
     "@angular/compiler-cli": "~8.0.0",
     "@ngtools/webpack": "~8.0.0",
-    "nativescript-dev-webpack": "1.0.1",
-    "typescript": "3.4.5"
+    "nativescript-dev-typescript": "~0.10.0",
+    "nativescript-dev-webpack": "~0.24.0"
   },
   "gitHead": "741012cc7bed3bca055d6453e83fff51387deac3",
   "readme": "NativeScript Application"
