@@ -33,7 +33,7 @@
         <!-- >> gauges-getting-started-angular-html -->
             <!-- >> gauges-animations-angular-html -->
             <StackLayout col="0" row="0" colSpan="4" rowSpan="3" class="gauge">
-            <RadRadialGauge #myGauge subtitle="{{this.bluetoothService.percent*100}}%" title="UV absorption">
+            <RadRadialGauge #myGauge subtitle="{{this.bluetoothService.percent}}" title="% UV absorption">
                     <RadialScale #myScale tkRadialGaugeScales startAngle="0" sweepAngle="360" minimum="0" maximum="100" radius="0.9">
                         <ScaleStyle tkRadialScaleStyle ticksVisible="false" labelsVisible="false" lineThickness="0"></ScaleStyle>
             
@@ -41,7 +41,7 @@
                             <BarIndicatorStyle tkRadialBarIndicatorStyle fillColor="rgb(234,217,76, 0.5)" barWidth="0.1"></BarIndicatorStyle>
                         </RadialBarIndicator>
                         
-                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="{{this.bluetoothService.percent}}" location="1" isAnimated="true">
+                        <RadialBarIndicator tkRadialScaleIndicators minimum="0" maximum="0" location="1" isAnimated="true"> <!--{{this.bluetoothService.percent}}-->
                             <BarIndicatorStyle tkRadialBarIndicatorStyle cap="Round" fillColor="rgb(234,217,76, 1)" barWidth="0.1"></BarIndicatorStyle>
                         </RadialBarIndicator>
             
@@ -66,7 +66,7 @@
         <StackLayout row="3" col="0" colSpan="2" class="uv-freq body">
             <Label [text]="this.bluetoothService.total + ' UV absorbed'"></Label>
         </StackLayout>
-        <Label row="3" col="2" colSpan="2" class="uv-freq body" text="15mins until burn"></Label>
+        <Label row="3" col="2" colSpan="2" class="uv-freq body" [text]="this.percent"></Label>
         <StackLayout row="4" col="0" rowSpan="1" colSpan="4" class="secondary-main">
         <GridLayout columns="*, *" rows="auto" class="secondary-grid">
         <!--<Label row="0" col="0" colSpan="2" rowSpan="1" *ngIf="this.connected" text="Connected" class="body"></Label>-->

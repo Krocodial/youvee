@@ -17,7 +17,8 @@ import { throwIfEmpty } from "rxjs/operators";
 
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { ActivityIndicator } from "tns-core-modules/ui/activity-indicator";
-import { EventData, Observable } from "tns-core-modules/data/observable";
+import { EventData, Observable, PropertyChangeData } from "tns-core-modules/data/observable";
+
 import { ChangeDetectionStrategy } from "@angular/compiler/src/core";
 //import { View } from "tns-core-modules/ui/core/view";
 import * as observableArray from "tns-core-modules/data/observable-array";
@@ -52,6 +53,7 @@ export class HomeComponent implements OnInit {
     discoveredServices = new observableArray.ObservableArray();
     news;
     intensity;
+    percent;
 
     constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone, private notificationService: NotificationService, private routerExtensions: RouterExtensions) {
         //this.connected = bluetoothService.connected;
@@ -60,6 +62,7 @@ export class HomeComponent implements OnInit {
         this.connected = false;
         this.deviceList = [];
         this.busy = false;
+        this.percent = 0;
         //this.serviceList = this.bluetoothService.getServices();
         //this.device = new Bluetooth();
         //this.test = 0;
@@ -70,11 +73,25 @@ export class HomeComponent implements OnInit {
         //this.connected = false;
         this.serviceList = [];
         this.deviceInfo = new DeviceInfo();
+
+        this.bluetoothService.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
+            this.percent = propertychangeData.value;
+            //this.ref.detectChanges();
+            //console.log(propertychangeData.propertyName + " has been changed and the new value is: " + propertychangeData.value);
+          });
+
+
     }
 
     ngOnInit() {
         this.bluetoothService.status.subscribe(value => { this.connected = value});
-        
+        this.bluetoothService.percy.subscribe(value => { this.percent = value });
+
+
+        let scale = this.scaleElement.nativeElement as RadialScale;
+        let barIndicator = scale.indicators.getItem(1) as RadialBarIndicator;
+        barIndicator.maximum = this.bluetoothService.percent;
+
         //this.deviceList = this.bluetoothService.scan();
         //this.devices = this.bluetoothService.scan();
         
@@ -86,16 +103,18 @@ export class HomeComponent implements OnInit {
 
     @ViewChild("myScale", { static: false }) scaleElement: ElementRef;
     
-    ngAfterViewInit() {
+    /*ngAfterViewInit() {
         
         let scale = this.scaleElement.nativeElement as RadialScale;
-        /*for (let i = 0; i < scale.indicators.length; i++) {
+        let barIndicator = scale.indicators.getItem(1) as RadialBarIndicator;
+        barIndicator.maximum = this.bluetoothService.percent;
+        for (let i = 0; i < scale.indicators.length; i++) {
             let barIndicator = scale.indicators.getItem(i) as RadialBarIndicator;
             if (barIndicator.maximum === 0) {
                 barIndicator.maximum = i * 15;
             }
-        }*/
-    }
+        }
+}*/
 
 
     check() {

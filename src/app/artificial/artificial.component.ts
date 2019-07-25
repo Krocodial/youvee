@@ -25,4 +25,7 @@ export class ArtificialComponent implements OnInit {
         * Use the "ngOnInit" handler to initialize data for this component.
         *************************************************************/
     }
+
+    
+
 }

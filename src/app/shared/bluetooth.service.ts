@@ -17,11 +17,16 @@ export class BluetoothService{
     serviceList = [];
     private connected = new BehaviorSubject<boolean>(false);
     status = this.connected.asObservable();
+    private test = new BehaviorSubject(0);
+    percy = this.test.asObservable();
+
     uuid = '';
     discoveredServices = new observableArray.ObservableArray();
     device: Bluetooth;
     total;
     percent;
+    vals;
+    //percy = this.percent.asObservable();
 
     test_total = new Observable();
 
@@ -29,13 +34,16 @@ export class BluetoothService{
     constructor(private _ngZone: NgZone, private ref: ChangeDetectorRef) {
         //this.connected = new BehaviorSubject<boolean>(false);
         //this.serviceList = new observableArray.ObservableArray(); 
+        this.vals = '';
         this.device = new Bluetooth();
         this.total = 0;
         this.percent = 0;
         this.test_total.set("total", 0);
 
         this.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
-          console.log(propertychangeData.propertyName + " has been changed and the new value is: " + propertychangeData.value);
+          this.total = propertychangeData.value;
+          //this.ref.detectChanges();
+          //console.log(propertychangeData.propertyName + " has been changed and the new value is: " + propertychangeData.value);
         });
 
         if (appSettings.hasKey("uuid")) {
@@ -138,23 +146,46 @@ export class BluetoothService{
               });  sdf */
 
 
-              /*bluetooth.startNotifying({
+              bluetooth.startNotifying({
                 peripheralUUID: this.device.uuid,
                 serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
                 characteristicUUID: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
-                onNotify: function (result) {
+                //onNotify: async function (result) {
+                onNotify: async (result) => {
                   // see the read example for how to decode AsdfrrayBuffers
                     //console.log(String.fromCharCode.apply(null, new Uint8Array(result.value)));
                   //console.log(result.value);
                     var data = String.fromCharCode.apply(null, new Uint8Array(result.value));
                     //var data = new Uint8Array(result.value);
-                    console.log(data);
+                    this.vals = this.vals.concat(data);
+                    var dic = this.vals.split('\n');
+                    for (var i = 0; i < dic.length-1; i++) {
+                      if (dic[i].startsWith("T")) {
+                        var tmp = dic[i].split(':');
+                        this.total = tmp[1];
+                        this.test.next(tmp[1]);
+                      } else if (dic[i].startsWith("P")) {
+                        var tmp = dic[i].split(':');
+                        this.percent = tmp[1];
+                      }
+                    }
+
+                    //console.log(data);
+                    this.ref.detectChanges();
+                    //console.log(dic[-])
+                    this.vals = dic.pop();
+                    //console.log(this.percent);
+                    //console.log(dics);
+                    //this.vals.push(data);
+                    //console.log(this.vals);
+                    //console.log(data);
                     
                   //test 1
-                  //const data = Uint8Array(result.value);
+                  //var data = new Uint8Array(result.value);
                   //console.log(data.toString());
+                  
 
-
+                  /*
                   //async test 2
                   function largeuint8ArrToString(unint8arr, callback) {
                     var bb = new Blob([unint8arr]);
@@ -168,16 +199,14 @@ export class BluetoothService{
                   var test = new Uint8Array(result.value);
                   largeuint8ArrToString(test, function(text){
                     console.log(text);
-                  });
-                  
-                  
-                  
+                  });*/
+        
                 }  
               }).then(function() {
                 console.log("subscribed for notifications");
               }, function (err) {
                   console.log("subscribe error: " + err);
-              });*/
+              });
 
               /*bluetooth.write({
                 peripheralUUID: this.device.uuid,
