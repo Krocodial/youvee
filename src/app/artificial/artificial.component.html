@@ -3,5 +3,19 @@
 </ActionBar>
 
 <StackLayout class="page">
-    <Button class="btn btn-primary btn-active" id="button" text="Increase UV by 25%" (tap)="increase"></Button>
+    <GridLayout rows="*,*,auto,auto" columns="*,*">
+
+            <StackLayout row="0" col="0" colSpan="2">
+                <Label style="text-align: center;" text="{{this.connected}}"></Label>
+
+            </StackLayout>
+
+
+            <Button row="2" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-25%" (tap)="increase(-25)" style="background-color: crimson;"></Button>
+            <Button row="2" col="1" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="+25%" (tap)="increase(25)" style="background-color: mediumseagreen;"></Button>
+
+            <Button row="3" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-50%" (tap)="increase(-50)" style="background-color: crimson;"></Button>
+            <Button row="3" col="1" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="+50%" (tap)="increase(50)" style="background-color: mediumseagreen;"></Button>
+    </GridLayout>
+    
 </StackLayout>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { BluetoothService } from "../shared/bluetooth.service";
+import { EventData } from "tns-core-modules/ui/page/page";
+import { DrawerStateChangedEventArgs } from "nativescript-ui-sidedrawer";
 /* ***********************************************************
 * Before you can navigate to this page from your app, you need to reference this page's module in the
 * global app router module. Add the following object to the global array of routes:
@@ -13,19 +15,22 @@ import { BluetoothService } from "../shared/bluetooth.service";
     templateUrl: "./artificial.component.html"
 })
 export class ArtificialComponent implements OnInit {
+    connected;
+    
+
     constructor(private bluetoothService: BluetoothService) {
-        /* ***********************************************************
-        * Use the constructor to inject app services that you need in this component.
-        *************************************************************/
+        this.connected = false;
     }
 
     ngOnInit(): void {
-        console.log(this.bluetoothService.status);
-        /* ***********************************************************
-        * Use the "ngOnInit" handler to initialize data for this component.
-        *************************************************************/
+        this.bluetoothService.status.subscribe(value => { this.connected = value});
+        
     }
 
+    increase(amount) {
+        this.bluetoothService.adjust(amount);
+       
+    }
     
 
 }

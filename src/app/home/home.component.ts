@@ -137,7 +137,7 @@ export class HomeComponent implements OnInit {
     connect(uuid) {
         //var opa = new observableArray.ObservableArray();
 
-        console.log(bluetooth.connect({
+        bluetooth.connect({
             UUID: uuid,
             onConnected: (peripheral) => {
                 console.log("peripheral connected with uuid: " + peripheral.UUID);
@@ -155,7 +155,7 @@ export class HomeComponent implements OnInit {
             }
             //return this.serviceList;
 
-        }));
+        });
 
     }
      scan() {

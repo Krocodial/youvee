@@ -28,6 +28,7 @@ export class BluetoothService{
     total;
     percent;
     vals;
+    artificial;
     //percy = this.percent.asObservable();
 
     test_total = new Observable();
@@ -43,6 +44,7 @@ export class BluetoothService{
         this.raw_total = 0;
         this.raw_percent = 0;
         this.test_total.set("total", 0);
+        this.artificial = 0;
 
         this.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
           this.total = propertychangeData.value;
@@ -73,13 +75,10 @@ export class BluetoothService{
         alert("Bluetooth run");
     }
 
-    adjustPercent(percent) {
-      this.percent = this.percent + percent;
+    adjust(amount) {
+      this.artificial = this.artificial + amount;
     }
 
-    adjustTotal(uv) {
-      this.total = this.total + uv;
-    }
 
     scan() {
 
@@ -140,8 +139,8 @@ export class BluetoothService{
             handle = setInterval(() => {
               this.raw_percent = this.raw_percent + .01;
               this.raw_total = this.raw_total + 1;     
-              this.percent = Number.parseFloat(this.raw_percent).toFixed(2);
-              this.total = Number.parseFloat(this.raw_total).toFixed(2);
+              this.percent = Number.parseFloat(this.raw_percent + this.artificial).toFixed(2);
+              this.total = Number.parseFloat(this.raw_total + this.artificial).toFixed(2);
                     //console.log(this.percent);
                     if(this.raw_percent == 100) {
                       clearInterval(handle);
