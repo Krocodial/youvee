@@ -88,9 +88,9 @@ export class HomeComponent implements OnInit {
         this.bluetoothService.percy.subscribe(value => { this.percent = value });
 
 
-        let scale = this.scaleElement.nativeElement as RadialScale;
-        let barIndicator = scale.indicators.getItem(1) as RadialBarIndicator;
-        barIndicator.maximum = this.bluetoothService.percent;
+        //let scale = this.scaleElement.nativeElement as RadialScale;
+        //let barIndicator = scale.indicators.getItem(1) as RadialBarIndicator;
+        //barIndicator.maximum = this.bluetoothService.percent;
 
         //this.deviceList = this.bluetoothService.scan();
         //this.devices = this.bluetoothService.scan();

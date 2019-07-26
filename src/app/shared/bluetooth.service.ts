@@ -23,6 +23,8 @@ export class BluetoothService{
     uuid = '';
     discoveredServices = new observableArray.ObservableArray();
     device: Bluetooth;
+    raw_total;
+    raw_percent;
     total;
     percent;
     vals;
@@ -36,8 +38,10 @@ export class BluetoothService{
         //this.serviceList = new observableArray.ObservableArray(); 
         this.vals = '';
         this.device = new Bluetooth();
-        this.total = 0;
-        this.percent = 0;
+        this.total = "0";
+        this.percent = "0";
+        this.raw_total = 0;
+        this.raw_percent = 0;
         this.test_total.set("total", 0);
 
         this.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
@@ -131,22 +135,22 @@ export class BluetoothService{
             });
             
 
-            /*bluetooth.read({
-                peripheralUUID: this.device.uuid,
-                serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
-                characteristicUUID: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E'
-              }).then(function(result) {
-                // fi. a heartrate monitor value (Uint8) can be retrieved like this:
-                console.log(result);
-                var data = new Uint8Array(result.value);
-                console.log(data);
-                console.log("value is: " + data);  
-              }, funcftion (err) {
-                console.log("read error: " + err);
-              });  sdf */
+            var handle;
+            
+            handle = setInterval(() => {
+              this.raw_percent = this.raw_percent + .01;
+              this.raw_total = this.raw_total + 1;     
+              this.percent = Number.parseFloat(this.raw_percent).toFixed(2);
+              this.total = Number.parseFloat(this.raw_total).toFixed(2);
+                    //console.log(this.percent);
+                    if(this.raw_percent == 100) {
+                      clearInterval(handle);
+                    }
+                    this.ref.detectChanges();
+                  }, 3000); // Run each 50ms
 
 
-              bluetooth.startNotifying({
+              /*bluetooth.startNotifying({
                 peripheralUUID: this.device.uuid,
                 serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
                 characteristicUUID: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
@@ -174,39 +178,14 @@ export class BluetoothService{
                     this.ref.detectChanges();
                     //console.log(dic[-])
                     this.vals = dic.pop();
-                    //console.log(this.percent);
-                    //console.log(dics);
-                    //this.vals.push(data);
-                    //console.log(this.vals);
-                    //console.log(data);
-                    
-                  //test 1
-                  //var data = new Uint8Array(result.value);
-                  //console.log(data.toString());
-                  
-
-                  /*
-                  //async test 2
-                  function largeuint8ArrToString(unint8arr, callback) {
-                    var bb = new Blob([unint8arr]);
-                    var f = new FileReader();
-                    f.onload = function(e) {
-                      callback(f.result);
-                    };
-                    f.readAsText(bb);
-                  }
-
-                  var test = new Uint8Array(result.value);
-                  largeuint8ArrToString(test, function(text){
-                    console.log(text);
-                  });*/
+                   
         
                 }  
               }).then(function() {
                 console.log("subscribed for notifications");
               }, function (err) {
                   console.log("subscribe error: " + err);
-              });
+              });*/
 
               /*bluetooth.write({
                 peripheralUUID: this.device.uuid,
