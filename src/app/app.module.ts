@@ -16,6 +16,7 @@ import { DeviceComponent } from "./device/device.component";
 import { ArtificialComponent } from "./artificial/artificial.component";
 
 import { BluetoothService } from "./shared/bluetooth.service";
+import { NotificationService } from "./shared/notification.service";
 
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { ModalDialogService } from "nativescript-angular/modal-dialog";
@@ -46,7 +47,9 @@ import { BottomNavigationComponent } from "./shared/components/bottom-navigation
         //QuizComponent,
     ],
     providers: [
-        BluetoothService
+        NotificationService,
+        BluetoothService,
+        
         //FileReaderService
     ],
     schemas: [

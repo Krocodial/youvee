@@ -3,19 +3,20 @@
 </ActionBar>
 
 <StackLayout class="page">
-    <GridLayout rows="*,*,auto,auto" columns="*,*">
+    <GridLayout rows="*, *, *, *, auto, auto" columns="*,*">
 
-            <StackLayout row="0" col="0" colSpan="2">
-                <Label style="text-align: center;" text="{{this.connected}}"></Label>
+            
+            <Label row="0" col="0" colSpan="2" style="text-align: center;" class="body" text="{{'Connected ' + this.connected}}"></Label>
+            <Label row="1" col="0" colSpan="2" style="text-align: center;" class="h3" text="{{'Current modifier ' + this.bluetoothService.artificial}}"></Label>
+            <Label row="2" col="0" style="text-align: center;" class="h4" text="{{'Percent absorbed: ' + this.bluetoothService.raw_percent}}"></Label>
+            <Label row="2" col="1" style="text-align: center;" class="h4" text="{{'Percent adjusted: ' + this.bluetoothService.percent}}"></Label>
 
-            </StackLayout>
 
+            <Button row="4" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-25%" (tap)="increase(-25)" style="background-color: crimson;"></Button>
+            <Button row="4" col="1" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="+25%" (tap)="increase(25)" style="background-color: mediumseagreen;"></Button>
 
-            <Button row="2" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-25%" (tap)="increase(-25)" style="background-color: crimson;"></Button>
-            <Button row="2" col="1" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="+25%" (tap)="increase(25)" style="background-color: mediumseagreen;"></Button>
-
-            <Button row="3" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-50%" (tap)="increase(-50)" style="background-color: crimson;"></Button>
-            <Button row="3" col="1" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="+50%" (tap)="increase(50)" style="background-color: mediumseagreen;"></Button>
+            <Button row="5" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-50%" (tap)="increase(-50)" style="background-color: crimson;"></Button>
+            <Button row="5" col="1" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="+50%" (tap)="increase(50)" style="background-color: mediumseagreen;"></Button>
     </GridLayout>
     
 </StackLayout>

@@ -85,7 +85,8 @@ export class HomeComponent implements OnInit {
 
     ngOnInit() {
         this.bluetoothService.status.subscribe(value => { this.connected = value});
-        this.bluetoothService.percy.subscribe(value => { this.percent = value });
+        //this.notificationService.notify(1);
+        //this.bluetoothService.percy.subscribe(value => { this.percent = value });
 
 
         //let scale = this.scaleElement.nativeElement as RadialScale;

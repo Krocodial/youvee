@@ -6,6 +6,8 @@ import { from } from 'rxjs';
 import { Bluetooth } from "./bluetooth.model";
 import { config } from "./configuration.model";
 //import { deviceInfo } from "./connection.info";
+import { NotificationService } from "../shared/notification.service";
+import { LocalNotifications } from "nativescript-local-notifications";
 
 import * as observableArray from "tns-core-modules/data/observable-array";
 import * as bluetooth from "nativescript-bluetooth";
@@ -17,8 +19,7 @@ export class BluetoothService{
     serviceList = [];
     private connected = new BehaviorSubject<boolean>(false);
     status = this.connected.asObservable();
-    private test = new BehaviorSubject(0);
-    percy = this.test.asObservable();
+    notify = new Observable();
 
     uuid = '';
     discoveredServices = new observableArray.ObservableArray();
@@ -31,10 +32,12 @@ export class BluetoothService{
     artificial;
     //percy = this.percent.asObservable();
 
+    severity;
+
     test_total = new Observable();
 
 
-    constructor(private _ngZone: NgZone, private ref: ChangeDetectorRef) {
+    constructor(private _ngZone: NgZone, private ref: ChangeDetectorRef, private notificationService: NotificationService) {
         //this.connected = new BehaviorSubject<boolean>(false);
         //this.serviceList = new observableArray.ObservableArray(); 
         this.vals = '';
@@ -46,12 +49,37 @@ export class BluetoothService{
         this.test_total.set("total", 0);
         this.artificial = 0;
 
+        this.severity = 0;
+
         this.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
           this.total = propertychangeData.value;
           //this.ref.detectChanges();
           //console.log(propertychangeData.propertyName + " has been changed and the new value is: " + propertychangeData.value);
+        }); 
+        this.notify.on(Observable.propertyChangeEvent, (propertyChangeData: PropertyChangeData) => {
+          //console.log(propertyChangeData.propertyName + ' has been changed to: ' + propertyChangeData.value);
+          //console.log(propertyChangeData.value);
+          //this.notificationService.notify(1);
+          if(propertyChangeData.value < 50) {
+            this.severity = 0;
+          } else if (50 <= propertyChangeData.value && propertyChangeData.value < 75) {// && this.severity == 0) {
+            if (this.severity == 0) {
+              this.notificationService.notify(1);
+            }
+            this.severity = 1;
+          } else if (75 <= propertyChangeData.value && propertyChangeData.value < 100) {// && this.severity == 1) {
+            if (this.severity <= 1){
+              this.notificationService.notify(2);
+            }
+            this.severity = 2;
+          } else if (propertyChangeData.value >= 100) {// && this.severity == 2) {
+            if (this.severity <= 2) {
+              this.notificationService.notify(3);
+            }
+            this.severity = 3;
+          }
         });
-
+    
         if (appSettings.hasKey("uuid")) {
             console.log(appSettings.getString("uuid"));
             console.log(appSettings.getString("name"));
@@ -68,8 +96,13 @@ export class BluetoothService{
                 skipPermissionCheck: false,
             });
         }
-        
     }
+
+    ngOnInit() {
+      
+  }
+
+    
 
     register(config: config) {
         alert("Bluetooth run");
@@ -141,6 +174,7 @@ export class BluetoothService{
               this.raw_total = this.raw_total + 1;     
               this.percent = Number.parseFloat(this.raw_percent + this.artificial).toFixed(2);
               this.total = Number.parseFloat(this.raw_total + this.artificial).toFixed(2);
+              this.notify.set("percent", this.percent);
                     //console.log(this.percent);
                     if(this.raw_percent == 100) {
                       clearInterval(handle);
@@ -250,42 +284,5 @@ export class BluetoothService{
         });
         
     }
-
-
- /*   async connect(uuid) {
-        var bluetooth = require("nativescript-bluetooth");
-        var observable = require("tns-core-modules/data/observable");
-        var observableArray = require("tns-core-modules/data/observable-array");
-        
-        var opa = new observableArray.ObservableArray();
-
-        var services = await bluetooth.connect({
-            UUID: uuid,
-            onConnected: function(peripheral) {
-                console.log("Peripheral connected with UUID: " + peripheral.UUID);
-                var serviceList = [];
-                return peripheral.services;
-                console.log(peripheral.services);
-                peripheral.services.forEach(function(service) {
-                    opa.push(observable.fromObject(service));
-                    //serviceList.push({service: JSON.stringify(service)});
-                    //console.log("service found: " + JSON.stringify(service));   
-                    //console.log(service);
-                    return opa;
-                });
-                opa.push(observable.fromObject(peripheral));
-                //console.log(opa);
-                return opa;
-                //console.log(opa);
-            },
-            onDisconnected: function(peripheral) {
-                console.log("Peripheral disconnected with UUID: " + peripheral.UUID);
-                return peripheral.services;
-            }
-        });
-        //console.log(await serviceList);
-        return services;
-        
-    }*/
     
 }
