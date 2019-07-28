@@ -1,12 +1,12 @@
 <ActionBar class="action-bar">
         <Label class="action-bar-title" style="font-family: 'Karma', serif;" text="About"></Label>
 </ActionBar>
-<GridLayout rows="*, *, *, *, *" columns="*">
+<GridLayout rows="*, 4*" columns="*">
     <Label row="0" class="h1" style="text-align: center;" text="Terms and Conditions"></Label>
-    <ListView row="1" rowSpan="4" [items]="this.news">
-        <ng-template let-item="item">
-                <Label [text]="item" class="list-group-item-text body text-center" textWrap="true"></Label>
-        </ng-template>
-    </ListView>
+    <ScrollView row="1">
+        <Label class="body text-center" textWrap="true" [text]="this.tos"></Label>
+    </ScrollView>
+
+    
 
 </GridLayout>

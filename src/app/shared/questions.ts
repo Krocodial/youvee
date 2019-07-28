@@ -3,7 +3,7 @@ export var json =
     "categories": [
         {
             "title": "UV Tolerance Quiz",
-            "quizDate": "Last Done - 20 October 2018",
+            "quizDate": "",
             "lastScore": "Last Result - Skin Type II",
             "backgroundColor": "#51A3A3",
             "image": "~/app/images/quiz.png",
@@ -353,7 +353,7 @@ export var json =
             "quizDate": "Modify UV exposure manually",
             "lastScore": "",
             "backgroundColor": "#EAD94C",
-            "image": "~/app/images/device_info.png",
+            "image": "~/app/images/edit.png",
             "questions": [
                 {
                     "question": "How long is an IPv6 address?",

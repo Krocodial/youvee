@@ -22,7 +22,8 @@ const routes: Routes = [
     { path: "settings", component: SettingsComponent },
     { path: "about", component: AboutComponent },
     { path: "quiz", component: QuizComponent },
-    { path: "stats", component: StatsComponent },
+    //{ path: "stats", component: StatsComponent },
+    { path: "stats", loadChildren: "~/app/stats/stats.module#StatsModule" },
     { path: "device", component: DeviceComponent },
     { path: "artificial", component: ArtificialComponent },
     { path: "score", component: ScoreComponent }

@@ -43,7 +43,7 @@ import { BottomNavigationComponent } from "./shared/components/bottom-navigation
         SettingsComponent,
         AboutComponent,
         QuizComponent,
-        StatsComponent,
+        //StatsComponent,
         DeviceComponent,
         ArtificialComponent,
         ScoreComponent
