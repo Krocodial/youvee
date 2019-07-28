@@ -13,15 +13,7 @@ export var json =
                     "options": [
                         {
                             "option": "",
-                            "color": ["#583512"]
-                        },
-                        {
-                            "option": "",
-                            "color": ["#8d5524"]
-                        },
-                        {
-                            "option": "",
-                            "color": ["#c68642"]
+                            "color": ["#ffdbac"]
                         },
                         {
                             "option": "",
@@ -29,71 +21,249 @@ export var json =
                         },
                         {
                             "option": "",
-                            "color": ["#ffdbac"]
+                            "color": ["#c68642", "#e0ac69"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#8d5524"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#583512"]
                         }
                     ],
                     "correctAnswerIndex": 3
                 },
                 {
-                    "question": "Have any of your relatives been diagnosed with skin cancer?",
+                    "question": "What color best matches your eyes?",
                     "options": [
                         {
-                            "option": "Yes"
+                            "option": "",
+                            "color": ["#b5e1f6", "#c2ecb8"]
                         },
                         {
-                            "option": "No"
+                            "option": "",
+                            "color": ["#7fb4be", "#1b5675", "#19a337", "#337a2c"]
                         },
                         {
-                            "option": "Unsure"
+                            "option": "",
+                            "color": ["#3d671d", "#795548"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#634e34", "#603101"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#451800", "#000000"]
                         }
                     ],
                     "correctAnswerIndex": 2
                 },
                 {
-                    "question": "Are you currently taking medication with [xxxx], [yyyy], or [aaaa] in it?",
+                    "question": "What color best matches your natural hair?",
                     "options": [
                         {
-                            "option": "Yes"
+                            "option": "",
+                            "color": ["#75250a"]
                         },
                         {
-                            "option": "No"
+                            "option": "",
+                            "color": ["#faf0be"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#905424", "#d5a453"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#4d2d1a"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#000000"]
                         }
                     ],
                     "correctAnswerIndex": 0
                 },
                 {
-                    "question": "If you have applied sunscreen today what was the SPF?",
+                    "question": "How would you describe the number of freckles you have?",
                     "options": [
                         {
-                            "option": "SPF 15"
+                            "option": "Many",
+                            "color": ['#51A3A3']
                         },
                         {
-                            "option": "SPF 30"
+                            "option": "Several",
+                            "color": ['#51A3A3']
                         },
                         {
-                            "option": "SPF 60"
+                            "option": "Few",
+                            "color": ['#51A3A3']
                         },
                         {
-                            "option": "I haven't applied sunscreen today"
+                            "option": "Rare",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "None",
+                            "color": ['#51A3A3']
                         }
-
                     ],
                     "correctAnswerIndex": 3
                 },
                 {
-                    "question": "How long ago?",
+                    "question": "What commonly happens if you stay in the sun for an extended period?",
                     "options": [
                         {
-                            "option": "< 30mins"
+                            "option": "Severe burns, blistering, peeling",
+                            "color": ['#51A3A3']
                         },
                         {
-                            "option": "30mins > 1 hour"
+                            "option": "Moderate burns, blistering, peeling",
+                            "color": ['#51A3A3']
                         },
                         {
-                            "option": "1 > 2 hours"
+                            "option": "Burns sometimes followed by peeling",
+                            "color": ['#51A3A3']
                         },
                         {
-                            "option": "I haven't applied sunscreen today"
+                            "option": "Rare burns",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "No burns",
+                            "color": ['#51A3A3']
+                        }
+                    ],
+                    "correctAnswerIndex": 2
+                },
+                {
+                    "question": "How sensitive is your face to the sun?",
+                    "options": [
+                        {
+                            "option": "Very sensitive",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Sensitive",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Mildly sensitive",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Resistant",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Very resistant",
+                            "color": ['#51A3A3']
+                        }
+                    ],
+                    "correctAnswerIndex": 2
+                },
+                {
+                    "question": "After sun exposure, do you usually tan?",
+                    "options": [
+                        {
+                            "option": "No tan, only burn",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Rarely tan, usually burn",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Sometimes tan, sometimes burn",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Often tan, rarely burn",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Always tan or never burn",
+                            "color": ['#51A3A3']
+                        }
+                    ],
+                    "correctAnswerIndex": 2
+                },
+                {
+                    "question": "If you tan, how dark does your skin get?",
+                    "options": [
+                        {
+                            "option": "N/a does not tan",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Light tan",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Medium tan",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Dark tan",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "N/a does not tan",
+                            "color": ['#51A3A3']
+                        }
+                    ],
+                    "correctAnswerIndex": 2
+                },
+                {
+                    "question": "How often do you tan?",
+                    "options": [
+                        {
+                            "option": "Never",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Rarely",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Sometimes",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Often",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "Always",
+                            "color": ['#51A3A3']
+                        }
+                    ],
+                    "correctAnswerIndex": 2
+                },
+                {
+                    "question": "When did you last expose your sin to the sun or artificial tanning sources?",
+                    "options": [
+                        {
+                            "option": "More than three months ago",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "In the last 2-3 months",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "In the last 1-2 weeks",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "In the last week",
+                            "color": ['#51A3A3']
+                        },
+                        {
+                            "option": "In the last day",
+                            "color": ['#51A3A3']
                         }
                     ],
                     "correctAnswerIndex": 2

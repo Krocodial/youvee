@@ -11,6 +11,7 @@ import { QuizComponent } from "./quiz/quiz.component";
 import { StatsComponent } from "./stats/stats.component";
 import { DeviceComponent } from "./device/device.component";
 import { ArtificialComponent } from "./artificial/artificial.component";
+import { ScoreComponent } from "./score/score.component";
 
 const routes: Routes = [
 
@@ -23,7 +24,8 @@ const routes: Routes = [
     { path: "quiz", component: QuizComponent },
     { path: "stats", component: StatsComponent },
     { path: "device", component: DeviceComponent },
-    { path: "artificial", component: ArtificialComponent }
+    { path: "artificial", component: ArtificialComponent },
+    { path: "score", component: ScoreComponent }
 
     
     //{ path: "", redirectTo: "/(home:home//settings:settings//about:about//)", pathMatch: "full" },

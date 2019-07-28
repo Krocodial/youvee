@@ -6,7 +6,7 @@ import { setNumber } from "tns-core-modules/application-settings";
 import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import { setTimeout } from "tns-core-modules/timer";
 import { json } from "../shared/questions";
-
+import { BluetoothService } from "../shared/bluetooth.service";
 
 @Component({
     selector: "Quiz",
@@ -26,22 +26,30 @@ export class QuizComponent implements OnInit {
 	constructor(
 		private route: ActivatedRoute,
 		private routerExtensions: RouterExtensions,
-		private page: Page
+		private page: Page,
+		private bluetoothService: BluetoothService
 	) {
 		this.page.actionBarHidden = true;
 	}
 
 	ngOnInit(): void {
-		this.route.queryParams.subscribe(params => {
+		/*this.route.queryParams.subscribe(params => {
             this.category = json["categories"][0];
 			this.questions = this.category['questions'];
-		})
+		})*/
+		this.category = json["categories"][0];
+		this.questions = this.category['questions'];
+		this.score = 0;
 	}
 
 	// -------------------------- QUIZ ----------------------------
 
 	selectAnswer(answerIndex: number, args: any) {
-        let option = <GridLayout>args.object;
+		let option = <GridLayout>args.object;
+		//console.log(args);
+		//console.log(answerIndex);
+		this.score = this.score + answerIndex;
+		console.log(this.score);
         option.backgroundColor = '#EAD94C';
 		/*if (this.questions[this.currentQuestionIndex].correctAnswerIndex == answerIndex) {
 			// correct answer
@@ -67,6 +75,7 @@ export class QuizComponent implements OnInit {
 	saveScore() {
 		//let scorePercentage = Math.round(this.score * 100 / this.questions.length);
 		//setNumber(this.category, scorePercentage);
+		this.bluetoothService.changeScore(this.score);
 	}
 
 	end() {
@@ -86,7 +95,7 @@ export class QuizComponent implements OnInit {
 	getCols(question) {
 		var cols = '';
 		//console.log(question.color);
-		question.color.forEach(element => {
+		question.forEach(element => {
 			cols = cols + '*, ';
 		});
 		return cols;
@@ -112,14 +121,14 @@ export class QuizComponent implements OnInit {
 	// ------------------------- NAVIGATION -----------------------------
 
 	navigateToScore() {
-        this.routerExtensions.navigate(['/settings'], { clearHistory: true });
-		/*let navigationExtras = {
+        //this.routerExtensions.navigate(['/settings'], { clearHistory: true });
+		let navigationExtras = {
 			queryParams: {
-				'score': Math.round(this.score * 100 / this.questions.length)l
+				'score': this.score
 			}
         };
         
-		this.routerExtensions.navigate(["/score"], navigationExtras);*/
+		this.routerExtensions.navigate(["/score"], navigationExtras);
 	}
 
 	/*navigateToPrevious() {

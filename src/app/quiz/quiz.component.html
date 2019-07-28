@@ -24,12 +24,18 @@
     </GridLayout>
 
 
-    <GridLayout *ngFor="let question of questions[currentQuestionIndex].options; let i = index" row="3" col="0" colSpan="2" [rows]="getRows(questions[currentQuestionIndex].options)">
-        <GridLayout *ngFor="let color of question.color; let p = index" (tap)="selectAnswer(i, $event)" columns="1" [row]="i">
-            <StackLayout [col]="p" [text]="question.option"></StackLayout>
+    
+        <GridLayout  row="3" col="0" colSpan="2" [rows]="getRows(questions[currentQuestionIndex].options)">
+            <GridLayout *ngFor="let question of questions[currentQuestionIndex].options; let i = index" [row]="i" [columns]="getCols(question.color)"  (tap)="selectAnswer(i, $event)"
+                margin="5" padding="5" borderRadius="20">
+                <GridLayout [col]="p" *ngFor="let color of question.color; let p = index" [backgroundColor]="color ">
+                    <Label verticalAlignment="center" horizontalAlignment="center"
+                    textAlignment="center" color="#fff" fontSize="13" fontWeight="bold"
+                    textWrap="true" [text]="question.option"></Label>
+                </GridLayout>
+            </GridLayout>
         </GridLayout>
-    </GridLayout>
-
+   
     <!--<GridLayout *ngIf="questions" row="3" col="0" colSpan="2" rows="*, *, *, *, *, *">
             
 
@@ -45,5 +51,5 @@
     
 
 </GridLayout>-->
-
+</GridLayout>
 <!--backgroundColor="#4446ff"-->

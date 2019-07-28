@@ -14,6 +14,7 @@ import { RouterModule } from "@angular/router";
 import { StatsComponent } from "./stats/stats.component";
 import { DeviceComponent } from "./device/device.component";
 import { ArtificialComponent } from "./artificial/artificial.component";
+import { ScoreComponent } from "./score/score.component";
 
 import { BluetoothService } from "./shared/bluetooth.service";
 import { NotificationService } from "./shared/notification.service";
@@ -22,6 +23,7 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { ModalDialogService } from "nativescript-angular/modal-dialog";
 
 import { BottomNavigationComponent } from "./shared/components/bottom-navigation.component";
+
 
 @NgModule({
     bootstrap: [
@@ -43,7 +45,8 @@ import { BottomNavigationComponent } from "./shared/components/bottom-navigation
         QuizComponent,
         StatsComponent,
         DeviceComponent,
-        ArtificialComponent
+        ArtificialComponent,
+        ScoreComponent
         //QuizComponent,
     ],
     providers: [

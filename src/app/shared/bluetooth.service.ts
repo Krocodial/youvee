@@ -32,6 +32,7 @@ export class BluetoothService{
     artificial;
     device: Bluetooth;
     severity;
+    score;
 
     test_total = new Observable();
 
@@ -66,6 +67,7 @@ export class BluetoothService{
         this.artificial = 0;
 
         this.severity = 0;
+        this.score = 0;
 
         this.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
           this.total = propertychangeData.value;
@@ -129,6 +131,9 @@ export class BluetoothService{
       this.behaviour_artificial.next(this.artificial);
     }
 
+    changeScore(score){
+      this.score = score;
+    }
 
     scan() {
 
