@@ -17,25 +17,41 @@ import * as appSettings from "tns-core-modules/application-settings";
 export class BluetoothService{
     deviceList: Array<Bluetooth>;
     serviceList = [];
-    private connected = new BehaviorSubject<boolean>(false);
-    status = this.connected.asObservable();
+
+    
+
     notify = new Observable();
 
     uuid = '';
     discoveredServices = new observableArray.ObservableArray();
-    device: Bluetooth;
     raw_total;
     raw_percent;
     total;
     percent;
     vals;
     artificial;
-    //percy = this.percent.asObservable();
-
+    device: Bluetooth;
     severity;
 
     test_total = new Observable();
 
+    private connected = new BehaviorSubject<boolean>(false);
+    status = this.connected.asObservable();
+    
+    private behaviour_total = new BehaviorSubject(0);
+    obs_total = this.behaviour_total.asObservable();
+    
+    private behaviour_percent = new BehaviorSubject(0);
+    obs_percent = this.behaviour_percent.asObservable();
+    
+    private behaviour_device = new BehaviorSubject(this.device);
+    obs_device = this.behaviour_device.asObservable();
+
+    private behaviour_artificial = new BehaviorSubject(0);
+    obs_artificial = this.behaviour_artificial.asObservable();
+
+    private behaviour_raw_percent = new BehaviorSubject(0);
+    obs_raw_percent = this.behaviour_raw_percent.asObservable();
 
     constructor(private _ngZone: NgZone, private ref: ChangeDetectorRef, private notificationService: NotificationService) {
         //this.connected = new BehaviorSubject<boolean>(false);
@@ -110,6 +126,7 @@ export class BluetoothService{
 
     adjust(amount) {
       this.artificial = this.artificial + amount;
+      this.behaviour_artificial.next(this.artificial);
     }
 
 
@@ -174,6 +191,9 @@ export class BluetoothService{
               this.raw_total = this.raw_total + 1;     
               this.percent = Number.parseFloat(this.raw_percent + this.artificial).toFixed(2);
               this.total = Number.parseFloat(this.raw_total + this.artificial).toFixed(2);
+              this.behaviour_percent.next(this.percent);
+              this.behaviour_total.next(this.total);
+              this.behaviour_raw_percent.next(this.raw_percent);
               this.notify.set("percent", this.percent);
                     //console.log(this.percent);
                     if(this.raw_percent == 100) {

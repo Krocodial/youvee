@@ -7,9 +7,9 @@
 
             
             <Label row="0" col="0" colSpan="2" style="text-align: center;" class="body" text="{{'Connected ' + this.connected}}"></Label>
-            <Label row="1" col="0" colSpan="2" style="text-align: center;" class="h3" text="{{'Current modifier ' + this.bluetoothService.artificial}}"></Label>
-            <Label row="2" col="0" style="text-align: center;" class="h4" text="{{'Percent absorbed: ' + this.bluetoothService.raw_percent}}"></Label>
-            <Label row="2" col="1" style="text-align: center;" class="h4" text="{{'Percent adjusted: ' + this.bluetoothService.percent}}"></Label>
+            <Label row="1" col="0" colSpan="2" style="text-align: center;" class="h3" text="{{'Current modifier ' + this.artificial + '%'}}"></Label>
+            <Label row="2" col="0" style="text-align: center;" class="h4" text="{{'Percent absorbed: ' + this.raw_percent + '%'}}"></Label>
+            <Label row="2" col="1" style="text-align: center;" class="h4" text="{{'Percent adjusted: ' + this.percent + '%'}}"></Label>
 
 
             <Button row="4" col="0" class="btn btn-rounded-sm btn-primary btn-active" id="button" text="-25%" (tap)="increase(-25)" style="background-color: crimson;"></Button>

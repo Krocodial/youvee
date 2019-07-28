@@ -54,6 +54,8 @@ export class HomeComponent implements OnInit {
     news;
     intensity;
     percent;
+    total;
+    device: Bluetooth;
 
     constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone, private notificationService: NotificationService, private routerExtensions: RouterExtensions) {
         //this.connected = bluetoothService.connected;
@@ -63,6 +65,8 @@ export class HomeComponent implements OnInit {
         this.deviceList = [];
         this.busy = false;
         this.percent = 0;
+        this.total = 0;
+        this.device = this.bluetoothService.device;
         //this.serviceList = this.bluetoothService.getServices();
         //this.device = new Bluetooth();
         //this.test = 0;
@@ -74,17 +78,13 @@ export class HomeComponent implements OnInit {
         this.serviceList = [];
         this.deviceInfo = new DeviceInfo();
 
-        this.bluetoothService.test_total.on(Observable.propertyChangeEvent, function(propertychangeData: PropertyChangeData){
-            this.percent = propertychangeData.value;
-            //this.ref.detectChanges();
-            //console.log(propertychangeData.propertyName + " has been changed and the new value is: " + propertychangeData.value);
-          });
-
-
     }
 
     ngOnInit() {
         this.bluetoothService.status.subscribe(value => { this.connected = value});
+        this.bluetoothService.obs_percent.subscribe(value => { this.percent = value });
+        this.bluetoothService.obs_total.subscribe(value => {this.total = value });
+
         //this.notificationService.notify(1);
         //this.bluetoothService.percy.subscribe(value => { this.percent = value });
 

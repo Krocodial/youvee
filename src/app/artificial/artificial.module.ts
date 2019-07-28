@@ -10,7 +10,7 @@ import { ArtificialComponent } from "./artificial.component";
         ArtificialRoutingModule
     ],
     declarations: [
-        ArtificialComponent
+        //ArtificialComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

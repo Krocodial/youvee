@@ -74,15 +74,35 @@ export class QuizComponent implements OnInit {
 		this.navigateToScore();
 	}
 
+	getRows(question) {
+		var rows = '';
+		//console.log(question);
+		question.forEach(element => {
+			rows = rows + '*, ';
+		});
+		return rows;
+	}
+
+	getCols(question) {
+		var cols = '';
+		//console.log(question.color);
+		question.color.forEach(element => {
+			cols = cols + '*, ';
+		});
+		return cols;
+	}
+
     genRows(item) {
         //console.log(item);
         //return item.options.length;
         return 4;
     }
-
+//'background: linear-gradient(to right,' + getColor(item) + ');'
     getColor(item) {
         if (item.color) {
-            return item.color;
+			//return item.color;
+			//return "background: linear-gradient(to right, #f1c27d);";//
+			return item.color;
         } else {
             return '#51A3A3';
             return '#4446ff';
@@ -95,7 +115,7 @@ export class QuizComponent implements OnInit {
         this.routerExtensions.navigate(['/settings'], { clearHistory: true });
 		/*let navigationExtras = {
 			queryParams: {
-				'score': Math.round(this.score * 100 / this.questions.length)
+				'score': Math.round(this.score * 100 / this.questions.length)l
 			}
         };
         

@@ -26,7 +26,7 @@ import { QuizComponent } from "./quiz.component";
         NativeScriptFormsModule
     ],
     declarations: [
-        QuizComponent
+        //QuizComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

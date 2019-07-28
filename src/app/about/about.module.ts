@@ -13,7 +13,7 @@ import { AboutComponent } from "./about.component";
         AboutRoutingModule,
     ],
     declarations: [
-        AboutComponent
+        //AboutComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

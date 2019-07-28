@@ -10,7 +10,7 @@ import { StatsComponent } from "./stats.component";
         StatsRoutingModule
     ],
     declarations: [
-        StatsComponent
+        //StatsComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

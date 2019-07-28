@@ -26,7 +26,7 @@ import { SettingsComponent } from "./settings.component";
         NativeScriptFormsModule
     ],
     declarations: [
-        SettingsComponent
+        //SettingsComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

@@ -5,7 +5,7 @@ import { AppModule } from "./app/app.module";
 
 //import * as application from "tns-core-modules/application";
 //import { CustomAppDelegate } from "./custom-app-delegate";
-//application.ios.delegate = CustomAppDelegate;
+//application.ios.delegate = CustomAppDelegate;/
 
 enableProdMode();
 platformNativeScriptDynamic().bootstrapModule(AppModule);

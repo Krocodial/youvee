@@ -10,7 +10,7 @@ import { DeviceComponent } from "./device.component";
         DeviceRoutingModule
     ],
     declarations: [
-        DeviceComponent
+        //DeviceComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

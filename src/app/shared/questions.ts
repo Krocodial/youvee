@@ -13,19 +13,23 @@ export var json =
                     "options": [
                         {
                             "option": "",
-                            "color": "saddlebrown"
+                            "color": ["#583512"]
                         },
                         {
                             "option": "",
-                            "color": "peru"
+                            "color": ["#8d5524"]
                         },
                         {
                             "option": "",
-                            "color": "tan"
+                            "color": ["#c68642"]
                         },
                         {
                             "option": "",
-                            "color": "cornsilk"
+                            "color": ["#f1c27d"]
+                        },
+                        {
+                            "option": "",
+                            "color": ["#ffdbac"]
                         }
                     ],
                     "correctAnswerIndex": 3

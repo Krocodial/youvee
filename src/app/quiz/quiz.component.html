@@ -2,7 +2,7 @@
     <Label class="action-bar-title" text="Home"></Label>
 </ActionBar>
 
-<GridLayout rows="auto, auto, *, auto" columns="*, auto" backgroundColor="#3B3561"
+<GridLayout rows="auto, auto, *, 2*" columns="*, auto" backgroundColor="#3B3561"
     padding="15"> <!--#0D0735-->
 
     <Label row="0" col="0" color="#fff" fontSize="15" fontWeight="bold"
@@ -23,26 +23,27 @@
             textWrap="true" [text]="questions[currentQuestionIndex].question"></Label>
     </GridLayout>
 
-    <GridLayout *ngIf="questions" row="3" col="0" colSpan="2" rows="*, *, *, *">
+
+    <GridLayout *ngFor="let question of questions[currentQuestionIndex].options; let i = index" row="3" col="0" colSpan="2" [rows]="getRows(questions[currentQuestionIndex].options)">
+        <GridLayout *ngFor="let color of question.color; let p = index" (tap)="selectAnswer(i, $event)" columns="1" [row]="i">
+            <StackLayout [col]="p" [text]="question.option"></StackLayout>
+        </GridLayout>
+    </GridLayout>
+
+    <!--<GridLayout *ngIf="questions" row="3" col="0" colSpan="2" rows="*, *, *, *, *, *">
+            
+
             <GridLayout *ngFor="let item of questions[currentQuestionIndex].options; let i = index"
-                [row]="i" height="70" margin="5" padding="5" [backgroundColor]="getColor(item)"
-                borderRadius="20" (tap)="selectAnswer(i, $event)">
-                <Label verticalAlignment="center" horizontalAlignment="center"
+                [row]="i"  margin="5" padding="5" [backgroundColor]="getColor(item)" 
+                borderRadius="20" (tap)="selectAnswer(i, $event)"> 
+                <Label  verticalAlignment="center" horizontalAlignment="center"
                     textAlignment="center" color="#fff" fontSize="13" fontWeight="bold"
                     textWrap="true" [text]="item.option"></Label>
             </GridLayout>
         </GridLayout>
 
-    <!--<GridLayout *ngIf="questions" row="3" col="0" colSpan="2" rows="*, *, *, *">
-        <GridLayout *ngFor="let item of questions[currentQuestionIndex].options; let i = index"
-            [row]="i" height="70" margin="5" padding="5" 
-            borderRadius="20" (tap)="selectAnswer(i, $event)">
-            <Label verticalAlignment="center" horizontalAlignment="center"
-                textAlignment="center" color="#fff" fontSize="13" fontWeight="bold"
-                textWrap="true" [text]="item"></Label>
-        </GridLayout>
-    </GridLayout>-->
+    
 
-</GridLayout>
+</GridLayout>-->
 
 <!--backgroundColor="#4446ff"-->

@@ -16,14 +16,25 @@ import { DrawerStateChangedEventArgs } from "nativescript-ui-sidedrawer";
 })
 export class ArtificialComponent implements OnInit {
     connected;
+    artificial;
+    raw_percent;
+    percent;
     
 
     constructor(private bluetoothService: BluetoothService) {
         this.connected = false;
+        this.artificial = 0;
+        this.percent = 0;
+        this.raw_percent = 0;
+        
+
     }
 
     ngOnInit(): void {
         this.bluetoothService.status.subscribe(value => { this.connected = value});
+        this.bluetoothService.obs_percent.subscribe(value => { this.percent = value });
+        this.bluetoothService.obs_artificial.subscribe(value => { this.artificial = value });
+        this.bluetoothService.obs_raw_percent.subscribe(value => { this.raw_percent = value });
         
     }
 
