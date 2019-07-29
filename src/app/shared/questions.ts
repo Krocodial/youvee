@@ -243,7 +243,7 @@ export var json =
                     "correctAnswerIndex": 2
                 },
                 {
-                    "question": "When did you last expose your sin to the sun or artificial tanning sources?",
+                    "question": "When did you last expose your skin to the sun or artificial tanning sources?",
                     "options": [
                         {
                             "option": "More than three months ago",

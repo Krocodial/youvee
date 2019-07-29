@@ -11,11 +11,12 @@ export class StatsComponent implements OnInit {
 
     constructor() {
         this.favoriteFruits  = [
-            { type: "🍎", count: 7 },
-            { type: "🍌", count: 15 },
-            { type: "🍍", count: 12 },
-            { type: "🍒", count: 30 },
-            { type: "🍇", count: 16 }
+            { type: "Febuary", count: 50},
+            { type: "March", count: 7 },
+            { type: "April", count: 15 },
+            { type: "May", count: 12 },
+            { type: "June", count: 30 },
+            { type: "July", count: 16 }
         ]
     }
 

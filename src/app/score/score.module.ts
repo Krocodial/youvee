@@ -10,7 +10,7 @@ import { ScoreComponent } from "./score.component";
         ScoreRoutingModule
     ],
     declarations: [
-        ScoreComponent
+        //ScoreComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

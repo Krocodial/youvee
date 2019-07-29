@@ -54,6 +54,9 @@ export class BluetoothService{
     private behaviour_raw_percent = new BehaviorSubject(0);
     obs_raw_percent = this.behaviour_raw_percent.asObservable();
 
+    private behaviour_ttb = new BehaviorSubject('0');
+    obs_ttb = this.behaviour_ttb.asObservable();
+
     constructor(private _ngZone: NgZone, private ref: ChangeDetectorRef, private notificationService: NotificationService) {
         //this.connected = new BehaviorSubject<boolean>(false);
         //this.serviceList = new observableArray.ObservableArray(); 
@@ -79,8 +82,10 @@ export class BluetoothService{
           //console.log(propertyChangeData.value);
           //this.notificationService.notify(1);
           if(propertyChangeData.value < 50) {
+            console.log('here');
             this.severity = 0;
           } else if (50 <= propertyChangeData.value && propertyChangeData.value < 75) {// && this.severity == 0) {
+            console.log('here');
             if (this.severity == 0) {
               this.notificationService.notify(1);
             }
@@ -189,7 +194,7 @@ export class BluetoothService{
             });
             
 
-            var handle;
+            /*var handle;
             
             handle = setInterval(() => {
               this.raw_percent = this.raw_percent + .01;
@@ -206,9 +211,10 @@ export class BluetoothService{
                     }
                     this.ref.detectChanges();
                   }, 3000); // Run each 50ms
+                  */
 
 
-              /*bluetooth.startNotifying({
+              bluetooth.startNotifying({
                 peripheralUUID: this.device.uuid,
                 serviceUUID: '6E400001-B5A3-F393-E0A9-E50E24DCCA9E',
                 characteristicUUID: '6E400003-B5A3-F393-E0A9-E50E24DCCA9E',
@@ -222,13 +228,25 @@ export class BluetoothService{
                     this.vals = this.vals.concat(data);
                     var dic = this.vals.split('\n');
                     for (var i = 0; i < dic.length-1; i++) {
-                      if (dic[i].startsWith("T")) {
+                      if (dic[i].startsWith("q")) {
                         var tmp = dic[i].split(':');
-                        this.total = tmp[1];
-                        this.test.next(tmp[1]);
-                      } else if (dic[i].startsWith("P")) {
+                        this.raw_total = parseFloat(tmp[1]);
+                        this.total = Number.parseFloat(this.raw_total + this.artificial).toFixed(2);
+                        this.behaviour_total.next(this.total);
+
+                        //this.test.next(tmp[1]);
+                      } else if (dic[i].startsWith("p")) {
                         var tmp = dic[i].split(':');
-                        this.percent = tmp[1];
+                        this.raw_percent = parseFloat(tmp[1]);
+                        this.percent = Number.parseFloat(this.raw_percent + this.artificial).toFixed(2);
+                        this.behaviour_percent.next(this.percent);
+                        this.behaviour_raw_percent.next(this.raw_percent);
+                        this.notify.set("percent", this.percent);
+                      } else if (dic[i].startsWith("t")) {
+                        var tmp = dic[i].split(":");
+                        //var ttb = parseFloat(tmp[1]);
+                        var ttb = Number.parseFloat(tmp[1]).toFixed(2);
+                        this.behaviour_ttb.next(ttb);
                       }
                     }
 
@@ -243,7 +261,7 @@ export class BluetoothService{
                 console.log("subscribed for notifications");
               }, function (err) {
                   console.log("subscribe error: " + err);
-              });*/
+              });
 
               /*bluetooth.write({
                 peripheralUUID: this.device.uuid,

@@ -56,6 +56,7 @@ export class HomeComponent implements OnInit {
     percent;
     total;
     device: Bluetooth;
+    ttb;
 
     constructor(private bluetoothService: BluetoothService, private router: Router, private page: Page, private ngZone:NgZone, private notificationService: NotificationService, private routerExtensions: RouterExtensions) {
         //this.connected = bluetoothService.connected;
@@ -71,6 +72,7 @@ export class HomeComponent implements OnInit {
         //this.device = new Bluetooth();
         //this.test = 0;
         this.intensity = 15.0;
+        this.ttb = '';
         this.news = ["Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent sit amet ligula ac ipsum tempor tempor nec ut justo. Vivamus iaculis lorem tempor, scelerisque nisl at, euismod arcu. Sed purus turpis, pulvinar non pretium eu, cursus et neque. Phasellus dui dui, lacinia rutrum laoreet sed, bibendum id leo. Suspendisse quis viverra neque. Integer semper magna at ultrices posuere. Ut mattis id lorem eget vehicula. Pellentesque vitae aliquam urna. Sed placerat maximus nulla. Vestibulum a commodo nisl. Praesent in eros enim. Curabitur eu est malesuada, congue risus sit amet, dictum eros. Aliquam ac euismod nulla. In finibus nibh a enim pharetra, at sollicitudin ipsum condimentum.",
                      "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec vitae nisi lorem. Morbi commodo sem erat, id pretium lorem pharetra ut. Aenean blandit nisl sit amet sollicitudin mollis. In sit amet mauris vulputate, bibendum purus id, varius ligula. Aliquam tincidunt felis urna, finibus elementum nisl semper vitae. Suspendisse a dui id nunc aliquam dapibus sit amet vel augue. Cras non tellus blandit, dapibus odio ultricies, tincidunt sapien. Nunc nec augue eleifend, luctus libero id, imperdiet metus. Nam rhoncus ac augue sed euismod. Nulla rhoncus vehicula dui, at lobortis massa rutrum porta. Nam iaculis nisl malesuada, rhoncus ipsum eget, aliquet lacus. Nulla est ipsum, mattis ac nisi in, interdum ornare lorem. Nunc dapibus ornare maximus. Quisque sed lacinia eros.",
                      "Fusce pharetra fringilla lorem, eget auctor quam faucibus ut. Praesent vitae risus eu justo malesuada pretium in a lorem. Duis hendrerit hendrerit lacus eget blandit. In pretium eleifend dolor, eu imperdiet nulla convallis sit amet. Curabitur at magna metus. Suspendisse et turpis lacinia, feugiat libero eu, gravida mi. Praesent sit amet tristique mi, ac scelerisque eros."]
@@ -84,6 +86,7 @@ export class HomeComponent implements OnInit {
         this.bluetoothService.status.subscribe(value => { this.connected = value});
         this.bluetoothService.obs_percent.subscribe(value => { this.percent = value });
         this.bluetoothService.obs_total.subscribe(value => {this.total = value });
+        this.bluetoothService.obs_ttb.subscribe(value => { this.ttb = value });
 
         //this.notificationService.notify(1);
         //this.bluetoothService.percy.subscribe(value => { this.percent = value });
